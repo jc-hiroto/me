@@ -43,7 +43,7 @@ function App() {
         <Text fontSize="2xl" fontWeight="500" color={useColorModeValue("gray.500", "gray.300")} fontFamily="monospace">a student, dev and photographer.</Text>
         <HStack w="30%" px="4" py="4" mt="8" justifyContent="center" spacing={4} flexDirection="row" bg={useColorModeValue("yellow.300","yellow.500")} borderRadius="xl" boxShadow="xl">
           <Image src={jcMemojiCoding} alt='JC coding memoji' boxSize='64px'/>
-          <Text fontSize="xl" fontWeight="800" color={useColorModeValue("gray.600", "gray.100")} my="4">Sorry! This website is still under construction</Text>
+          <Text fontSize="xl" fontWeight="800" color={useColorModeValue("gray.600", "gray.100")} my="4">Sorry! This website is still under construction.</Text>
         </HStack>
       </Flex>
     );
