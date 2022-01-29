@@ -1971,6 +1971,11 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
+"@n8tb1t/use-scroll-position@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@n8tb1t/use-scroll-position/-/use-scroll-position-2.0.3.tgz#207c54d584285cac0954d556964f83cf5774940b"
+  integrity sha512-6GO4FHVJTMI4jbRHborzemuL6B319qh2cVLOLj8DApJhjyT71eLgANbQ4bNKSZ51zBm3uJ3WmqnyNF17eSsDyw==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -6521,6 +6526,11 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -7989,6 +7999,14 @@ react-scripts@5.0.0:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-scroll@^1.8.4:
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.8.4.tgz#7cc882d7058d5b5aedcd362b1de13c88d64ebe4c"
+  integrity sha512-J9rFqmdzularCXJoK2vleHVg2//y9Fs6zh7K13x7Yz3Y1kHPfQ/TTq029L09q1Gr5/5JjFLBOB2Sa3yYIqyTyQ==
+  dependencies:
+    lodash.throttle "^4.1.1"
+    prop-types "^15.7.2"
 
 react-style-singleton@^2.1.0:
   version "2.1.1"
