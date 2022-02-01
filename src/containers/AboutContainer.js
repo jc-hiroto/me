@@ -41,7 +41,7 @@ const AboutContainer = ({name}) => {
   };
   return(
     <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
-      <SectionTitle base="about" sup="me" />
+      <SectionTitle base="about" sup="me" animate/>
       <Flex w="100%" minH="85vh" px={["4vw","4vw","10vw","10vw"]} justifyContent="center" alignItems="center" flexDirection="row" flexWrap="wrap">
         <Flex w={["100%","100%","100%","25%"]} py={["8","16"]} px="8" m="4"
               justifyContent="center" 

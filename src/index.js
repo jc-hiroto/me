@@ -4,13 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
+import { ParallaxProvider } from 'react-scroll-parallax';
 import theme from "./theme"
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
+      <ChakraProvider theme={theme}>
+    <ParallaxProvider>
+        <App />
+    </ParallaxProvider>
+      </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

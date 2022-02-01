@@ -19,8 +19,8 @@ import jcMemojiCoding from "./img/jc_memoji_coding.png"
 import ContactContainer from './containers/ContactContainer';
 
 
-const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: 0};
-const sections = ["me", "dev", "photo", "contact"];
+const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
+const sections = ["me", "dev", "photo", "volunteer", "contact"];
 
 function App() {
   
@@ -48,7 +48,7 @@ function App() {
   const DevSection = (name) => {
     return(
       <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
-        <SectionTitle base="me" sup="as a developer" />
+        <SectionTitle base="me" sup="as a developer" animate/>
         {smallBanner(jcMemojiCoding, "Sorry! This area is still under construction.", useColorModeValue("yellow.300","yellow.500"))}
       </Flex>
     );
@@ -56,7 +56,15 @@ function App() {
   const PhotoSection = (name) => {
     return(
       <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
-        <SectionTitle base="me" sup="as a photographer" />
+        <SectionTitle base="me" sup="as a photographer" animate/>
+        {smallBanner(jcMemojiCoding, "Sorry! This area is still under construction.", useColorModeValue("yellow.300","yellow.500"))}
+      </Flex>
+    );
+  };
+  const VolunteerSection = (name) => {
+    return(
+      <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
+        <SectionTitle base="me" sup="as a volunteer" animate/>
         {smallBanner(jcMemojiCoding, "Sorry! This area is still under construction.", useColorModeValue("yellow.300","yellow.500"))}
       </Flex>
     );
@@ -65,10 +73,11 @@ function App() {
     <Flex flexDirection="column" alignItems="center" justifyContent="start">
       <HeaderBar sections={sections} handleScrollToSection={handleScrollToSection} scroll={scroll} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
-      <IconButton icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("me")} _focus={{ boxShadow: "none", }}/>
+      <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("me")} _focus={{ boxShadow: "none", }}/>
       <AboutContainer name="me" />
       {DevSection("dev")}
       {PhotoSection("photo")}
+      {VolunteerSection("volunteer")}
       <ContactContainer name="contact" />
       <Footer />
     </Flex>
