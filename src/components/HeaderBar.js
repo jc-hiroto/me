@@ -14,7 +14,6 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { FaBars, FaMoon } from "react-icons/fa"
-import { Parallax } from "react-scroll-parallax";
 import jcMemojiWink from "../img/jc_memoji_wink.png"
 
 function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pagePosition }) {
