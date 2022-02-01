@@ -10,6 +10,7 @@ import {
   VStack,
   Tag,
   Icon,
+  Button,
 } from "@chakra-ui/react";
 import SectionTitle from "../components/SectionTitle";
 import jcAvatar from "../img/jc_avatar.png"
@@ -18,6 +19,7 @@ import TMLogo from "../img/tm_logo.png"
 import MineNTULogo from "../img/minentu_logo.png"
 import FTCLogo from "../img/ftc_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
+import { FaDownload } from "react-icons/fa";
 
 const AboutContainer = ({name}) => {
   const ExpSection = (name, logo, position, time, desc) => {
@@ -56,7 +58,7 @@ const AboutContainer = ({name}) => {
           <Text fontSize="xl" fontWeight="500" color={useColorModeValue("gray.800", "gray.800")}>👨‍💻 Developer</Text>
           <Text fontSize="xl" fontWeight="500" color={useColorModeValue("gray.800", "gray.800")}>📸 Photographer</Text>
           <Divider w="50%" my={["4","8"]} borderColor={useColorModeValue("gray.500", "gray.500")}/>
-          <Text as="i" fontSize="lg" fontWeight="300" color={useColorModeValue("gray.600", "gray.600")}>"Dream it, then code it."</Text>
+          <Button size="sm" leftIcon={<FaDownload/>} variant="ghost" color="blue.500" onClick={() => window.open("https://github.com/jc-hiroto/me/blob/master/public/po_hao_chang_resume.pdf", "_blank")}>Save my résumé</Button>
         </Flex>
         <Flex w={["100%","100%","100%","50%"]} h="80%" m="4" flexDirection="column">
           <Flex w="100%" pt="4" pb="8" px="8"
