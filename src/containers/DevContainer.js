@@ -12,13 +12,12 @@ import {
   IconButton,
   useMediaQuery
 } from "@chakra-ui/react";
-import ReactCardFlip from 'react-card-flip';
 import SectionTitle from "../components/SectionTitle";
 import { projects } from "../data/devProjects";
 import { FaReply } from "react-icons/fa";
 import { FiMoreVertical } from "react-icons/fi";
 
-const DevContainer = (name) => {
+const DevContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   const bgColor = useColorModeValue("gray.100", "gray.300");
   const ProjectCardFront = ({title, img, desc, period, profession, btns}, index, setIsFlipped) => {
@@ -90,25 +89,24 @@ const DevContainer = (name) => {
             <Text mb="2" fontSize={["lg", "xl"]} fontWeight="800" color="gray.800">Project Details</Text>
             <Tag colorScheme="blackAlpha" size="sm" variant="outline">{period}</Tag>
             <Text fontSize={["sm", "md"]} fontWeight="500" color="gray.800">{info}</Text>
-            <IconButton size="sm" mr="4" icon={<FaReply />} variant="ghost" color="gray.700" aria-label="flip-button" onClick={() => setIsFlipped(false)} />
+            <IconButton size="sm" mr="4" icon={<FaReply />} variant="ghost" color="gray.700" aria-label="flip-button" />
           </Flex>
       </Flex>
     );
   };
   const ProjectCard = (project, index) => {
-    const [isFlipped, setIsFlipped] = React.useState(false);
-    return ProjectCardFront(project, index, setIsFlipped);
+    return ProjectCardFront(project, index);
   };
   return(
     <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="me" sup="as a developer" animate/>
-      <Flex w="100%" h="80%" px={["4vw","4vw","10vw","15vw"]} m="4" flexDirection="column">
+      <Flex w="100%" h="80%" px={["8vw","10vw","10vw","15vw"]} m="4" flexDirection="column">
         {projects.map((project, index) => {
           return(
-            <>
+            <div key={index}>
               {ProjectCard(project, index)}
               <Spacer my="4" />
-            </>
+            </div>
           );
         })}
       </Flex>
