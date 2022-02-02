@@ -20,7 +20,7 @@ const ContactContainer = ({name}) => {
         <SectionTitle base="contact" sup="me"/>
       </Flex>
       <Flex justifyContent="center" alignItems="end" flexDirection="column">
-        <Parallax translateY={[60,-20]}>
+        <Parallax translateY={[60,-15]}>
           <Image src={jcMemojiCallMe} alt='JC call me memoji' boxSize={['128px','128px','200px']}/>
         </Parallax>
         <Flex p="8" mb="40" w={["80vw","80vw","40vw"]} justifyContent="center" alignItems="start" flexDirection="column" bg="gray.200" borderRadius="lg" boxShadow="xl" zIndex="100"> 

@@ -30,8 +30,8 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
             {
               sections.map((section, index) => {
                 return(
-                  <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none", }}>
-                    <Text fontSize="md" fontWeight="600" key={"text_sec_"+index} onClick={() => handleScrollToSection(section)}>{section}</Text>
+                  <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none" }} onClick={() => handleScrollToSection(section)}>
+                    <Text fontSize="md" fontWeight="600" key={"text_sec_"+index}>{section}</Text>
                   </MenuItem>
                 );
               })

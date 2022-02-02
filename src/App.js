@@ -17,6 +17,7 @@ import AboutContainer from './containers/AboutContainer';
 import SectionTitle from './components/SectionTitle';
 import jcMemojiCoding from "./img/jc_memoji_coding.png"
 import ContactContainer from './containers/ContactContainer';
+import DevContainer from './containers/DevContainer';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
@@ -45,14 +46,6 @@ function App() {
       </HStack>
     );
   };
-  const DevSection = (name) => {
-    return(
-      <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
-        <SectionTitle base="me" sup="as a developer" animate/>
-        {smallBanner(jcMemojiCoding, "Sorry! This area is still under construction.", useColorModeValue("yellow.300","yellow.500"))}
-      </Flex>
-    );
-  };
   const PhotoSection = (name) => {
     return(
       <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
@@ -75,7 +68,7 @@ function App() {
       <WelcomeContainer />
       <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("me")} _focus={{ boxShadow: "none", }}/>
       <AboutContainer name="me" />
-      {DevSection("dev")}
+      <DevContainer name="dev" />
       {PhotoSection("photo")}
       {VolunteerSection("volunteer")}
       <ContactContainer name="contact" />
