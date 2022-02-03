@@ -11,6 +11,11 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/me_og.png",
+      "sizes": "1200x630",
+      "type": "image/png"
     }
   ],
   "theme_color": "#ffffff",
