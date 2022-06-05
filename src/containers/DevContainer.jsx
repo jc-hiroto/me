@@ -20,11 +20,12 @@ import { FiMoreVertical } from "react-icons/fi";
 const DevContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   const bgColor = useColorModeValue("gray.100", "gray.800");
-  const btnColor = useColorModeValue("gray.300", "gray.600");
-  const ProjectCardFront = ({title, img, desc, period, profession, btns}, index, setIsFlipped) => {
-    if(isMobile){
+  const btnColor = useColorModeValue("gray.500", "gray.700");
+  const ProjectCard = ({title, img, desc, period, profession, btns}, index, setIsFlipped) => {
       return(
-        <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="column" bg={bgColor} borderRadius="xl" boxShadow="2xl">
+        <Flex w={isMobile? "100%":"350px"} my="4" mx={isMobile?"0":"4"}key={index} justifyContent="space-between" alignItems="start" flexDirection="column" bg={bgColor} borderRadius="xl" boxShadow="2xl">
+          <Image w="100%" src={img} alt={"Image of "+name} borderTopLeftRadius="xl" borderTopRightRadius="xl"/>
+          <Flex w="100%" px="8" py="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="column">
             <Text fontSize={["lg","xl", "2xl"]} fontWeight="800" color={useColorModeValue("gray.700", "gray.300")}>{title}</Text>
             <HStack my="2" spacing={2}>
               {profession.map((prof, index) => {
@@ -42,35 +43,9 @@ const DevContainer = ({name}) => {
                 );
               })}
             </Flex>
+          </Flex>
       </Flex>
       );
-    }
-    return(
-      <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="stretch" flexDirection="row" bg={bgColor} borderRadius="lg" boxShadow="2xl">
-          <Flex flexDirection="column" justifyContent="space-between" alignItems="start">
-            <Flex flexDirection="column" justifyContent="start" alignItems="start">
-              <Text fontSize={["md","xl", "2xl"]} fontWeight="800" color={useColorModeValue("gray.700", "gray.300")}>{title}</Text>
-              <HStack my="2.5" spacing={2}>
-                {profession.map((prof, index) => {
-                  return(
-                    <Badge key={index} colorScheme="teal" variant="solid" fontSize="xs">{prof}</Badge>
-                  );
-                })}
-              </HStack>
-              <Text fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.700", "gray.300")}>{desc}</Text>
-            </Flex>
-            <Flex w="100%" flexWrap="wrap" alignItems="center" gap="2">
-              <Button size="sm" leftIcon={<FiMoreVertical />} variant="outline" color="gray.400" borderColor="gray.400" aria-label="flip-button" onClick={() => setIsFlipped(true)}>Detail</Button>
-              {btns.map((btn, i) => {
-                return(
-                  <Button key={i} size="sm" fontSize={["xs", "sm"]} leftIcon={btn.icon} color="white" bg={btnColor} _hover={{bg: "gray.500"}} onClick={() => window.open(btn.link, "_blank")}>{btn.title}</Button>
-                  );
-                })}
-            </Flex>
-          </Flex>
-          <Image w="25%" ml="8" src={img} alt={"Image of "+name} borderRadius="lg"/>
-      </Flex>
-    );
   };
   const ProjectCardBack = ({img, info, period}, index, setIsFlipped) => {
     if(isMobile){
@@ -95,18 +70,14 @@ const DevContainer = ({name}) => {
       </Flex>
     );
   };
-  const ProjectCard = (project, index) => {
-    return ProjectCardFront(project, index);
-  };
   return(
-    <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
+    <Flex name={name} w="100%" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="me" sup="as a developer" animate/>
-      <Flex w="100%" h="80%" px={["8vw","10vw","10vw","15vw"]} m="4" flexDirection="column">
+      <Flex w="100%" h="80%" px="8vw" m="4" flexDirection={isMobile? "column":"row"} overflow="auto">
         {projects.map((project, index) => {
           return(
             <div key={index}>
               {ProjectCard(project, index)}
-              <Spacer my="4" />
             </div>
           );
         })}

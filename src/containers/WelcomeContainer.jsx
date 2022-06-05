@@ -19,7 +19,7 @@ const WelcomeContainer = ({name}) => {
           <Image mx="4" src={jcMemojiWink} alt='JC wink memoji' boxSize='128px'/>
           <Text fontSize={["4xl","8xl"]} fontWeight="800" color={titleColor}>It's me! James.</Text>
         </Flex>
-        <Text fontSize={["lg","2xl"]} fontWeight="500" color={titleColor} fontFamily="monospace">a student, dev and photographer.</Text>
+        <Text fontSize={["md","2xl"]} fontWeight="500" color={titleColor} fontFamily="monospace">student, dev and photographer</Text>
       </Flex>
     );
   }
@@ -30,7 +30,7 @@ const WelcomeContainer = ({name}) => {
           <Image mx="4" src={jcMemojiWink} alt='JC wink memoji' boxSize='128px'/>
           <Text fontSize={["4xl","8xl"]} fontWeight="800" color="gray.600">It's me! James.</Text>
         </Flex>
-        <Text fontSize={["lg","2xl"]} fontWeight="500" color="gray.600" fontFamily="monospace">a student, dev and photographer.</Text>
+        <Text fontSize={["lg","2xl"]} fontWeight="500" color="gray.600" fontFamily="monospace">student, dev and photographer</Text>
       </Flex>
     </Parallax>
   );

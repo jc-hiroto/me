@@ -31,7 +31,7 @@ const AboutContainer = ({name}) => {
           <Text fontSize={["md","lg", "xl"]} fontWeight="600" color={useColorModeValue("gray.800", "gray.200")}>{name}</Text>
           <Flex w="100%" flexWrap="wrap" alignItems="center" css={{gap: "0.5em"}}>
             <Text mr="2" as="i" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>{position}</Text>
-            <Tag colorScheme="whiteAlpha" size="sm" variant="outline">{time}</Tag>
+            <Tag colorScheme={useColorModeValue("blackAlpha" ,"whiteAlpha")} size="sm" variant="outline">{time}</Tag>
           </Flex>
           <Text mt="2" fontSize={["xs", "sm"]} fontWeight="400" color={useColorModeValue("gray.800", "gray.200")}>
            {desc}
@@ -44,7 +44,7 @@ const AboutContainer = ({name}) => {
     <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="about" sup="me" animate/>
       <Flex w="100%" minH="85vh" px="4vw" justifyContent="center" alignItems="start" flexDirection="row" flexWrap="wrap">
-        <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px="8" m="4"
+        <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px={["2","8"]} m="4"
               justifyContent="center" 
               alignItems="center" 
               flexDirection="column" 
@@ -62,7 +62,7 @@ const AboutContainer = ({name}) => {
           <Button size="sm" leftIcon={<FaDownload/>} variant="ghost" color="blue.500" onClick={() => window.open("https://github.com/jc-hiroto/me/blob/master/public/po_hao_chang_resume.pdf", "_blank")}>Save my résumé</Button>
         </Flex>
         <Flex h="80%" m="4" flexDirection="column">
-          <Flex w="100%" py="8" px="16"
+          <Flex w="100%" py="8" px={["8","16"]}
                 justifyContent="start" 
                 alignItems="start" 
                 flexDirection="column" 
@@ -76,7 +76,7 @@ const AboutContainer = ({name}) => {
               "Taipei, Taiwan")}  
           </Flex>
           <Spacer my="4" />
-          <Flex w="100%" py="8" px="16"
+          <Flex w="100%" py="8" px={["8","16"]}
                 justifyContent="start" 
                 alignItems="start" 
                 flexDirection="column" 
