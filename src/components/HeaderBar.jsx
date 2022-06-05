@@ -13,7 +13,9 @@ import {
   useColorModeValue,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { FaBars, FaMoon } from "react-icons/fa"
+import { MdWbSunny } from "react-icons/md"
 import jcMemojiWink from "../img/jc_memoji_wink.png"
 
 function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pagePosition }) {
@@ -21,6 +23,11 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
   const [ isMobile ] = useMediaQuery("(max-width: 768px)")
   const bg_color = useColorModeValue("white", "gray.800")
   const text_color = useColorModeValue("gray.500", "gray.300")
+  const spring = {
+    type: 'spring',
+    stiffness: 600,
+    damping: 60,
+  }
   if(isMobile) {
     return(
       <Flex w="100%" h="64px" px="2" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="box-shadow ease-in-out 500ms">
@@ -42,7 +49,13 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
           <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='24px'/>
           <Text fontSize="2xl" fontWeight="700" color={text_color} >James</Text>
         </HStack>
-        <IconButton size="sm" onClick={toggleColorMode} icon={<FaMoon />} variant={colorMode === "dark" ? "solid":"ghost"} _focus={{ boxShadow: "none", }}/>
+        <motion.div transition={spring} whileTap={{rotate: 360}}>
+          <IconButton onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }}>
+              {
+                colorMode === "dark" ? <FaMoon /> : <MdWbSunny size="24"/>
+              }
+          </IconButton>
+        </motion.div> 
       </Flex>
     );
   }
@@ -50,7 +63,6 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
     <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="opacity ease-in-out 300ms" opacity={isAtPageTop?"0":"0.99"}>
       <HStack as="button" spacing={2} onClick={() => scroll.scrollTo(0)}>
         <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px'/>
-        <Text fontSize="3xl" fontWeight="700" color={text_color} >James</Text>
       </HStack>
       <HStack spacing={4}>
         {
@@ -63,7 +75,13 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
         }
       </HStack>
       <HStack spacing={2}>
-        <IconButton onClick={toggleColorMode} icon={<FaMoon />} variant={colorMode === "dark" ? "solid":"ghost"} _focus={{ boxShadow: "none", }}/>
+        <motion.div transition={spring} whileTap={{rotate: 360}}>
+          <IconButton onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }}>
+              {
+                colorMode === "dark" ? <FaMoon color="gray"/> : <MdWbSunny color="gray" size="24"/>
+              }
+          </IconButton>
+        </motion.div>  
       </HStack>
     </Flex>
   );

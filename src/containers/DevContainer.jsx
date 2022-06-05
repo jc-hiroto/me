@@ -19,12 +19,13 @@ import { FiMoreVertical } from "react-icons/fi";
 
 const DevContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 760px)");
-  const bgColor = useColorModeValue("gray.100", "gray.300");
+  const bgColor = useColorModeValue("gray.100", "gray.800");
+  const btnColor = useColorModeValue("gray.300", "gray.600");
   const ProjectCardFront = ({title, img, desc, period, profession, btns}, index, setIsFlipped) => {
     if(isMobile){
       return(
-        <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="column" bg={bgColor} borderRadius="2xl" boxShadow="2xl">
-            <Text fontSize={["lg","xl", "2xl"]} fontWeight="800" color="gray.800">{title}</Text>
+        <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="column" bg={bgColor} borderRadius="xl" boxShadow="2xl">
+            <Text fontSize={["lg","xl", "2xl"]} fontWeight="800" color={useColorModeValue("gray.700", "gray.300")}>{title}</Text>
             <HStack my="2" spacing={2}>
               {profession.map((prof, index) => {
                 return(
@@ -32,12 +33,12 @@ const DevContainer = ({name}) => {
                 );
               })}
             </HStack>
-            <Text mb="8" fontSize={["sm", "md"]} fontWeight="500" color="gray.800">{desc}</Text>
+            <Text mb="8" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.700", "gray.300")}>{desc}</Text>
             <Flex w="100%" flexWrap="wrap" alignItems="center" gap="2">
               <IconButton size="sm" icon={<FiMoreVertical />} variant="outline" color="blue.600" borderColor="blue.600" aria-label="flip-button" onClick={() => setIsFlipped(true)} />
               {btns.map((btn, i) => {
                 return(
-                  <Button key={i} size="sm" fontSize={["xs", "sm"]} leftIcon={btn.icon} color="white" bg="gray.500" _hover={{bg: "gray.600"}} onClick={() => window.open(btn.link, "_blank")}>{btn.title}</Button>
+                  <Button key={i} size="sm" fontSize={["xs", "sm"]} leftIcon={btn.icon} color="white" bg={btnColor} _hover={{bg: "gray.600"}} onClick={() => window.open(btn.link, "_blank")}>{btn.title}</Button>
                 );
               })}
             </Flex>
@@ -45,10 +46,10 @@ const DevContainer = ({name}) => {
       );
     }
     return(
-      <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="stretch" flexDirection="row" bg={bgColor} borderRadius="2xl" boxShadow="2xl">
+      <Flex w="100%" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="stretch" flexDirection="row" bg={bgColor} borderRadius="lg" boxShadow="2xl">
           <Flex flexDirection="column" justifyContent="space-between" alignItems="start">
             <Flex flexDirection="column" justifyContent="start" alignItems="start">
-              <Text fontSize={["md","xl", "2xl"]} fontWeight="800" color="gray.800">{title}</Text>
+              <Text fontSize={["md","xl", "2xl"]} fontWeight="800" color={useColorModeValue("gray.700", "gray.300")}>{title}</Text>
               <HStack my="2.5" spacing={2}>
                 {profession.map((prof, index) => {
                   return(
@@ -56,13 +57,13 @@ const DevContainer = ({name}) => {
                   );
                 })}
               </HStack>
-              <Text fontSize={["sm", "md"]} fontWeight="500" color="gray.800">{desc}</Text>
+              <Text fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.700", "gray.300")}>{desc}</Text>
             </Flex>
             <Flex w="100%" flexWrap="wrap" alignItems="center" gap="2">
-              <Button size="sm" leftIcon={<FiMoreVertical />} variant="outline" color="blue.600" borderColor="blue.600" aria-label="flip-button" onClick={() => setIsFlipped(true)}>Detail</Button>
+              <Button size="sm" leftIcon={<FiMoreVertical />} variant="outline" color="gray.400" borderColor="gray.400" aria-label="flip-button" onClick={() => setIsFlipped(true)}>Detail</Button>
               {btns.map((btn, i) => {
                 return(
-                  <Button key={i} size="sm" fontSize={["xs", "sm"]} leftIcon={btn.icon} color="white" bg="gray.500" _hover={{bg: "gray.600"}} onClick={() => window.open(btn.link, "_blank")}>{btn.title}</Button>
+                  <Button key={i} size="sm" fontSize={["xs", "sm"]} leftIcon={btn.icon} color="white" bg={btnColor} _hover={{bg: "gray.500"}} onClick={() => window.open(btn.link, "_blank")}>{btn.title}</Button>
                   );
                 })}
             </Flex>
@@ -74,7 +75,7 @@ const DevContainer = ({name}) => {
   const ProjectCardBack = ({img, info, period}, index, setIsFlipped) => {
     if(isMobile){
       return(
-        <Flex w="100%" h="50vh" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="row" bg={bgColor} borderRadius="2xl" boxShadow="2xl">
+        <Flex w="100%" h="50vh" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="row" bg={bgColor} borderRadius="xl" boxShadow="2xl">
           <Flex h="100%" flexDirection="column" justifyContent="space-between" alignItems="start">
             <Text fontSize={["sm", "md"]} fontWeight="500" color="gray.800">{info}</Text>
             <Image h="128px" src={img} alt={"Image of "+name} borderRadius="lg"/>
@@ -84,7 +85,7 @@ const DevContainer = ({name}) => {
       );
     }
     return(
-      <Flex w="100%" h="25vh" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="row" bg={bgColor} borderRadius="2xl" boxShadow="2xl">
+      <Flex w="100%" h="25vh" pt="8" pb="8" px="8" key={index} justifyContent="space-between" alignItems="start" flexDirection="row" bg={bgColor} borderRadius="xl" boxShadow="2xl">
           <Flex h="100%" flexDirection="column" justifyContent="space-between" alignItems="start">
             <Text mb="2" fontSize={["lg", "xl"]} fontWeight="800" color="gray.800">Project Details</Text>
             <Tag colorScheme="blackAlpha" size="sm" variant="outline">{period}</Tag>

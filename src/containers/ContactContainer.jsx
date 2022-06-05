@@ -6,6 +6,8 @@ import {
   Image,
   Text,
   useMediaQuery,
+  useColorModeValue,
+  color,
 } from "@chakra-ui/react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Parallax } from "react-scroll-parallax";
@@ -23,22 +25,15 @@ const ContactContainer = ({name}) => {
         <Parallax translateY={[60,-15]}>
           <Image src={jcMemojiCallMe} alt='JC call me memoji' boxSize={['128px','128px','200px']}/>
         </Parallax>
-        <Flex p="8" mb="40" w={["80vw","80vw","40vw"]} justifyContent="center" alignItems="start" flexDirection="column" bg="gray.200" borderRadius="lg" boxShadow="xl" zIndex="100"> 
+        <Flex p="8" mb="40" w={["80vw","80vw","40vw"]} justifyContent="center" alignItems="start" flexDirection="column" bg={useColorModeValue("gray.100", "gray.800")}  borderRadius="lg" boxShadow="2xl" zIndex="100"> 
         <Flex w="100%" my="2" justifyContent="space-between" flexWrap="wrap" gap="2">
-            <Text fontSize={["lg","2xl"]} fontWeight="600" color="gray.700">💻 For my coding works... </Text>
-            <Button size={isMobile? "sm":"md"} leftIcon={<FaGithub/>} color="white" bg="gray.500" _hover={{bg: "gray.600"}} onClick={() => window.open("https://github.com/jc-hiroto", "_blank")}>GitHub</Button>
+            <Text fontSize={["lg","3xl"]} fontWeight="600" color={useColorModeValue("gray.700", "gray.300")}>💻  For my coding works... </Text>
+            <Button size={isMobile? "sm":"lg"} leftIcon={<FaGithub/>} color="white" bg="gray.700" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("https://github.com/jc-hiroto", "_blank")}>GitHub</Button>
           </Flex>
-          <Divider my="8" borderColor="gray.400"/>
+          <Divider my="8" borderColor={useColorModeValue("gray.300", "gray.700")} />
           <Flex w="100%" my="2" justifyContent="space-between" flexWrap="wrap" gap="2">
-            <Text fontSize={["lg","2xl"]} fontWeight="600" color="gray.700">📸 For my photo creations... </Text>
-            <HStack>
-              <Button size={isMobile? "sm":"md"} leftIcon={<FaInstagram/>} color="white" bg="gray.500" _hover={{bg: "gray.600"}} onClick={() => window.open("https://www.instagram.com/jc_hiroto/", "_blank")}>Instagram</Button>
-            </HStack>
-          </Flex>
-          <Divider my="8" borderColor="gray.400"/>
-          <Flex w="100%" my="2" justifyContent="space-between" flexWrap="wrap" gap="2">
-            <Text fontSize={["lg","2xl"]} fontWeight="600" color="gray.700">💼 For career opportunities... </Text>
-              <Button size={isMobile? "sm":"md"} leftIcon={<FaLinkedin/>} color="white" bg="gray.500" _hover={{bg: "gray.600"}} onClick={() => window.open("https://www.linkedin.com/in/jc-hiroto/", "_blank")}>LinkedIn</Button>
+            <Text fontSize={["lg","3xl"]} fontWeight="600" color={useColorModeValue("gray.700", "gray.300")} >💼  For career opportunities... </Text>
+            <Button size={isMobile? "sm":"lg"} leftIcon={<FaLinkedin/>} color="white" bg="blue.600" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("https://www.linkedin.com/in/jc-hiroto/", "_blank")}>LinkedIn</Button>
           </Flex>
         </Flex>
       </Flex>

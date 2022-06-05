@@ -3,7 +3,7 @@ import { FaFile, FaGithub, FaGlobeAmericas, FaInfoCircle } from "react-icons/fa"
 const projects = [
   {
     title: "FIRST Tech Challenge (FTC) Championship",
-    img: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/64850633-ff21-43c4-8163-eb062ec6f0b3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220202T064327Z&X-Amz-Expires=86400&X-Amz-Signature=0714a6efd76b65d49cd72052514a852537788aee74832554b8931828d7d12bc8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject",
+    img: "https://i.imgur.com/g08Ec1k.png",
     desc: "A robotics competition for students to compete head to head, by designing, building, and programming a robot to compete in an alliance format against other teams.",
     period: "Jan. 2016 - Oct. 2016",
     info: (
@@ -77,7 +77,7 @@ const projects = [
   },
   {
     title: "NTUCourse Neo",
-    img: "https://s3.us-west-2.amazonaws.com/secure.notion-static.com/68f6c696-8229-4d55-9d0b-f81e30b4fb0b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220202T082338Z&X-Amz-Expires=86400&X-Amz-Signature=31329151c7a8ed58f5404cf94424f1492a04cee398d4d6c09e56684888269766&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject",
+    img: "https://i.imgur.com/qf68MwM.png",
     desc: "A redesigned course planning web service for students in National Taiwan University.",
     period: "Nov. 2021 - Present",
     info: (
