@@ -21,7 +21,7 @@ import DevContainer from './containers/DevContainer';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
-const sections = ["me", "dev", "contact"];
+const sections = ["About", "Projects", "Contact"];
 
 function App() {
   
@@ -50,10 +50,10 @@ function App() {
     <Flex flexDirection="column" alignItems="center" justifyContent="start">
       <HeaderBar sections={sections} handleScrollToSection={handleScrollToSection} scroll={scroll} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
-      <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("me")} _focus={{ boxShadow: "none", }}/>
-      <AboutContainer name="me" />
-      <DevContainer name="dev" />
-      <ContactContainer name="contact" />
+      <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("About")} _focus={{ boxShadow: "none", }}/>
+      <AboutContainer name="About" />
+      <DevContainer name="Projects" />
+      <ContactContainer name="Contact" />
       <Footer />
     </Flex>
   );

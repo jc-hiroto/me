@@ -22,13 +22,15 @@ import FTCLogo from "../img/ftc_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaDownload } from "react-icons/fa";
 
+
 const AboutContainer = ({name}) => {
+  const bg_color = useColorModeValue("gray.50", "gray.800");
   const ExpSection = (name, logo, position, time, desc) => {
     return(
       <HStack spacing={4}>
         <Avatar src={logo} alt={"logo of"+name} name={name} boxSize={['32px','48px','64px']}/>
         <Flex flexDirection="column" justifyContent="start" alignItems="start">
-          <Text fontSize={["md","lg", "xl"]} fontWeight="600" color={useColorModeValue("gray.800", "gray.200")}>{name}</Text>
+          <Text fontSize={["md","lg", "xl"]} fontWeight="600" color={useColorModeValue("gray.800", "gray.500")}>{name}</Text>
           <Flex w="100%" flexWrap="wrap" alignItems="center" css={{gap: "0.5em"}}>
             <Text mr="2" as="i" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>{position}</Text>
             <Tag colorScheme={useColorModeValue("blackAlpha" ,"whiteAlpha")} size="sm" variant="outline">{time}</Tag>
@@ -42,15 +44,15 @@ const AboutContainer = ({name}) => {
   };
   return(
     <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
-      <SectionTitle base="about" sup="me" animate/>
+      <SectionTitle base="About" sup="👋" animate/>
       <Flex w="100%" minH="85vh" px="4vw" justifyContent="center" alignItems="start" flexDirection="row" flexWrap="wrap">
         <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px={["2","8"]} m="4"
               justifyContent="center" 
               alignItems="center" 
               flexDirection="column" 
-              bg={useColorModeValue("gray.100", "gray.800")} 
+              bg={bg_color} 
               borderRadius="xl"
-              boxShadow="2xl">
+              boxShadow="xl">
           <Avatar mb="4" src={jcAvatar} alt='James avatar' name="James Chang" boxSize='128px'/>
           <Text fontSize="4xl" fontWeight="800" color={useColorModeValue("gray.800", "gray.200")}>James Chang</Text>
           <Text as="i" fontSize="xl" fontWeight="300" color={useColorModeValue("gray.800", "gray.200")}>Po-Hao Chang</Text>
@@ -66,9 +68,9 @@ const AboutContainer = ({name}) => {
                 justifyContent="start" 
                 alignItems="start" 
                 flexDirection="column" 
-                bg={useColorModeValue("gray.100", "gray.800")} 
+                bg={useColorModeValue("gray.50", "gray.800")} 
                 borderRadius="xl"
-                boxShadow="2xl">
+                boxShadow="xl">
             <Text mb="4" fontSize="3xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Education</Text>
             {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "2022 - 2024 (Expected)", "Mountain View, CA")}  
             <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
@@ -80,9 +82,9 @@ const AboutContainer = ({name}) => {
                 justifyContent="start" 
                 alignItems="start" 
                 flexDirection="column" 
-                bg={useColorModeValue("gray.100", "gray.800")} 
+                bg={bg_color} 
                 borderRadius="xl"
-                boxShadow="2xl">
+                boxShadow="xl">
             <Text mb="4" fontSize="3xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
