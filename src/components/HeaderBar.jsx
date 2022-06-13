@@ -24,7 +24,7 @@ import jcMemojiWink from "../img/jc_memoji_wink.png"
 function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pagePosition }) {
   const { colorMode, toggleColorMode } = useColorMode()
   const [ isMobile ] = useMediaQuery("(max-width: 768px)")
-  const bg_color = useColorModeValue("white", "gray.800")
+  const bg_color = useColorModeValue("white", "gray.900")
   const text_color = useColorModeValue("gray.500", "gray.300")
   const spring = {
     type: 'spring',

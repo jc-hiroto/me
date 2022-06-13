@@ -18,6 +18,7 @@ import SectionTitle from './components/SectionTitle';
 import jcMemojiCoding from "./img/jc_memoji_coding.png"
 import ContactContainer from './containers/ContactContainer';
 import DevContainer from './containers/DevContainer';
+import Flashcards from './components/FlashCards';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
@@ -47,7 +48,7 @@ function App() {
     );
   };
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="start">
+    <Flex flexDirection="column" alignItems="center" justifyContent="start" bg={useColorModeValue("white", "gray.900")}>
       <HeaderBar sections={sections} handleScrollToSection={handleScrollToSection} scroll={scroll} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
       <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("About")} _focus={{ boxShadow: "none", }}/>
