@@ -49,10 +49,10 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
           </MenuList>
         </Menu>
         <HStack spacing={2}>
-          <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' onClick={() => scroll.scrollTo(0)} cursor="pointer"/>
+          <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' onClick={() => scroll.scrollTo(0)} cursor="pointer" opacity={isAtPageTop? "0":"1"} transition="opacity ease-in-out 500ms"/>
         </HStack>
-        <motion.div transition={spring} whileTap={{rotate: 360}}>
-          <Flex as="button" onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }} p="3">
+        <motion.div transition={spring} whileTap={{rotate: 180, opacity: 0}}>
+          <Flex onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }} p="3">
               {
                 colorMode === "dark" ? <Icon as={BsMoonFill} color="purple.400" boxSize="4"/> : <Icon as={BsSunFill} color="orange.500" boxSize="5"/>
               }
@@ -62,7 +62,7 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
     );
   }
   return (
-    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="opacity ease-in-out 300ms">
+    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="box-shadow ease-in-out 500ms">
       <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' onClick={() => scroll.scrollTo(0)} cursor="pointer"/>
       <HStack spacing={4}>
         {
@@ -75,7 +75,7 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
         }
       </HStack>
       <HStack spacing={2}>
-        <motion.div transition={spring} whileTap={{rotate: 360}}>
+        <motion.div transition={spring} whileTap={{rotate: 180, opacity:0}}>
           <IconButton onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }}>
               {
                 colorMode === "dark" ? <Icon as={BsMoonFill} color="purple.400" boxSize="5"/> : <Icon as={BsSunFill} color="orange.500" boxSize="6"/>
