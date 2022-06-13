@@ -159,7 +159,7 @@ function ProjectCard({project, index}) {
         whileHover={isSelected ? "hover_select" : "hover"}
         whileInView={isMobile? "hover": isSelected? "select": "initial"}
         transition={{}}
-        onMouseDown={() => setIsSelected(!isSelected)}
+        onClick={() => setIsSelected(!isSelected)}
       >
         <motion.div class="w-100 h-100" initial={{opacity: 0}} animate={{opacity: 1.0}} key={isSelected} transition={{type: "tween"}}>
           {isSelected? backContent():frontContent()}
