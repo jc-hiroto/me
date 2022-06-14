@@ -39,7 +39,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             {
               sections.map((section, index) => {
                 return(
-                  <HashLink key={index} to={`#${section}`}>
+                  <HashLink key={index} to={`#${section}`} smooth>
                     <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none" }} smooth>
                       <Text fontSize="md" fontWeight="600" key={"text_sec_"+index}>{section}</Text>
                     </MenuItem>
