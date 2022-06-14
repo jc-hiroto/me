@@ -43,7 +43,7 @@ const AboutContainer = ({name}) => {
     );
   };
   return(
-    <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
+    <Flex id={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="About" sup="👋" animate/>
       <Flex w="100%" minH="85vh" px="4vw" justifyContent="center" alignItems="start" flexDirection="row" flexWrap="wrap">
         <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px={["2","8"]} m="4"
@@ -52,7 +52,7 @@ const AboutContainer = ({name}) => {
               flexDirection="column" 
               bg={bg_color} 
               borderRadius="xl"
-              boxShadow="xl">
+              boxShadow="">
           <Avatar mb="4" src={jcAvatar} alt='James avatar' name="James Chang" boxSize='128px'/>
           <Text fontSize="3xl" fontWeight="800" color={useColorModeValue("gray.800", "gray.200")}>James Chang</Text>
           <Text as="i" fontSize="lg" fontWeight="300" color={useColorModeValue("gray.800", "gray.200")}>Po-Hao Chang</Text>
@@ -70,7 +70,7 @@ const AboutContainer = ({name}) => {
                 flexDirection="column" 
                 bg={useColorModeValue("gray.50", "gray.800")} 
                 borderRadius="xl"
-                boxShadow="xl">
+                boxShadow="">
             <Text mb="4" fontSize="3xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Education</Text>
             {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "2022 - 2024 (Expected)", "Mountain View, CA")}  
             <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
@@ -84,7 +84,7 @@ const AboutContainer = ({name}) => {
                 flexDirection="column" 
                 bg={bg_color} 
                 borderRadius="xl"
-                boxShadow="xl">
+                boxShadow="">
             <Text mb="4" fontSize="3xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">

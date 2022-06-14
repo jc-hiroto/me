@@ -15,7 +15,7 @@ import jcMemojiCallMe from "../img/jc_memoji_call_me.png"
 const ContactContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   return(
-    <Flex name={name} w="100%" minH="95vh" pt="5vh" justifyContent="space-evenly" alignItems="center" flexDirection="column">
+    <Flex id={name} w="100%" minH="95vh" pt="5vh" justifyContent="space-evenly" alignItems="center" flexDirection="column">
       <Flex w="100%" pl={["8vw"]} justifyContent="start" alignItems="center" flexDirection="row">
         <SectionTitle base="Contact" sup="💬"/>
       </Flex>

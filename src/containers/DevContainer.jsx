@@ -10,7 +10,7 @@ import ProjectCard from "../components/ProjectCard";
 const DevContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 760px)");  
   return(
-    <Flex name={name} w="100%" py="5vh" justifyContent="start" alignItems="center" flexDirection="column">
+    <Flex id={name} w="100%" py="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <Flex w="100%" pl={["8vw"]} justifyContent="start" alignItems="center" flexDirection="row">
         <SectionTitle base="Projects" sup="👨‍💻"/>
       </Flex>

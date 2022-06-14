@@ -41,7 +41,7 @@ const SectionTitle = ({base, sup, animate}) => {
         <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="600" color={titleColor} variants={emoji_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>
           {sup}
         </Text>
-        <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="800" color={titleColor} variants={title_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>{base}</Text>
+        <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="700" color={titleColor} variants={title_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>{base}</Text>
     </HStack>
   );
 };

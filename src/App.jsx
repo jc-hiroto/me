@@ -17,10 +17,11 @@ import WelcomeContainer from "./containers/WelcomeContainer";
 import AboutContainer from './containers/AboutContainer';
 import ContactContainer from './containers/ContactContainer';
 import DevContainer from './containers/DevContainer';
+import { HashLink } from 'react-router-hash-link';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
-const sections = ["About", "Projects", "Contact"];
+const sections = ["about", "projects", "contact"];
 
 function App() {
   
@@ -30,12 +31,7 @@ function App() {
   useScrollPosition(({ prevPos, currPos }) => {
     setIsAtPageTop(currPos.y === 0);
     setPagePosition(-(currPos.y/window.innerHeight)/0.95);
-  })
-
-  const handleScrollToSection = (section) => {
-    scroller.scrollTo(section, scroll_config);
-  };
-
+  });
 
   const smallBanner = (emoji, title, color) => {
     return(
@@ -47,14 +43,16 @@ function App() {
   };
   return (
     <Flex flexDirection="column" alignItems="center" justifyContent="start" bg={useColorModeValue("white", "gray.900")}>
-      <HeaderBar sections={sections} handleScrollToSection={handleScrollToSection} scroll={scroll} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
+      <HeaderBar sections={sections} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
       <motion.div animate={{y: [-20, 0, -20], scale:[1.1, 1, 1.1]}} transition={{delay: 2,repeat: Infinity, repeatType: "reverse", duration:2, repeatDelay: 1}}>
-        <IconButton mt="4" mb="10vh" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("About")} _focus={{ boxShadow: "none", }}/>
+        <HashLink to="/#about" smooth>
+          <IconButton mt="4" mb="10vh" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" _focus={{ boxShadow: "none", }}/>
+        </HashLink>
       </motion.div>
-      <AboutContainer name="About" />
-      <DevContainer name="Projects" />
-      <ContactContainer name="Contact" />
+      <AboutContainer name="about" />
+      <DevContainer name="projects" />
+      <ContactContainer name="contact" />
       <Footer />
     </Flex>
   );
