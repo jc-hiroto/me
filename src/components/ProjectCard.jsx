@@ -118,7 +118,7 @@ function ProjectCard({project, index}) {
     initial: { 
       y: 0,
       rotateZ: 0,
-      boxShadow: "0px 5px 15px rgba(0,0,0,0.2)",
+      boxShadow: "0px 5px 10px rgba(0,0,0,0.1)",
     },
     hover: {
       y: -10,

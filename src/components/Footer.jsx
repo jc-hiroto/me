@@ -10,7 +10,7 @@ import {
 import { FaCodeBranch, FaEnvelope, FaGithub } from "react-icons/fa"
 
 function Footer() {
-  const version = "v1.0 (20220613)"
+  const version = "v1.1 (20220615)"
   const text_color = useColorModeValue("gray.400", "gray.600");
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   if(isMobile) {
@@ -22,7 +22,7 @@ function Footer() {
             <Icon as={FaCodeBranch} boxSize="2" color={text_color} />
             <Text fontSize="8" fontWeight="600" color={text_color} >{version}</Text>
           </HStack>
-          <Text fontSize="8" fontWeight="500" color={text_color} >Copyright © {new Date().getFullYear()} James Chang.</Text>
+          <Text fontSize="10" fontWeight="500" color={text_color} >Copyright © {new Date().getFullYear()} James Chang.</Text>
         </Flex>
         <HStack>
           <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color={text_color} onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>

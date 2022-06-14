@@ -26,7 +26,7 @@ const SectionTitle = ({base, sup, animate}) => {
     },
     inview: {
       opacity: 1,
-      y: 0,
+      y: 5,
       transition: {
         type: "spring",
         stiffness: 200,
@@ -37,7 +37,7 @@ const SectionTitle = ({base, sup, animate}) => {
     }
   }
   return(
-    <HStack>
+    <HStack spacing="4" align="end">
         <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="600" color={titleColor} variants={emoji_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>
           {sup}
         </Text>
