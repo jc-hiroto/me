@@ -11,21 +11,23 @@ import { FaCodeBranch, FaEnvelope, FaGithub } from "react-icons/fa"
 
 function Footer() {
   const version = "v1.0 (20220613)"
-  const text_color = useColorModeValue("gray.500", "gray.500");
+  const text_color = useColorModeValue("gray.400", "gray.600");
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   if(isMobile) {
     return(
       <Flex w="100%" py="1" px="4" justifyContent="end" alignItems="center" flexDirection="column" >
       <Flex w="100%" my="2" justifyContent="space-between" alignItems="center">
         <Flex spacing={4} flexDirection="column" justifyContent="center" alignItems="start">
-          <Text fontSize="10" fontWeight="500" color={text_color} >Copyright © 2022 James Chang. All rights reserved.</Text>
-          <HStack mt="1">
+          <HStack mb="0.5">
             <Icon as={FaCodeBranch} boxSize="2" color={text_color} />
-            <Text fontSize="8" fontWeight="500" color={text_color} >{version}</Text>
+            <Text fontSize="8" fontWeight="600" color={text_color} >{version}</Text>
           </HStack>
+          <Text fontSize="8" fontWeight="500" color={text_color} >Copyright © 2022 James Chang. All rights reserved.</Text>
         </Flex>
-        <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color="gray.500" onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
-        <IconButton icon={<FaGithub size="1.5em"/>} size="sm" aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
+        <HStack>
+          <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color={text_color} onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
+          <IconButton icon={<FaGithub size="1.5em"/>} size="sm" aria-label="GitHub" variant="ghost" color={text_color} onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
+        </HStack>
       </Flex>
     </Flex>
     );
