@@ -22,7 +22,7 @@ function Footer() {
             <Icon as={FaCodeBranch} boxSize="2" color={text_color} />
             <Text fontSize="8" fontWeight="600" color={text_color} >{version}</Text>
           </HStack>
-          <Text fontSize="8" fontWeight="500" color={text_color} >Copyright © 2022 James Chang. All rights reserved.</Text>
+          <Text fontSize="8" fontWeight="500" color={text_color} >Copyright © {new Date().getFullYear()} James Chang.</Text>
         </Flex>
         <HStack>
           <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color={text_color} onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
@@ -42,7 +42,7 @@ function Footer() {
         </HStack>
       </HStack>
       <HStack spacing={2}>
-        <Text fontSize="sm" fontWeight="500" color={text_color} >Copyright © 2022 James Chang. All rights reserved.</Text>
+        <Text fontSize="sm" fontWeight="500" color={text_color} >Copyright © {new Date().getFullYear()} James Chang.</Text>
         <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color="gray.500" onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
         <IconButton icon={<FaGithub size="1.5em"/>} size="sm" aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
       </HStack>

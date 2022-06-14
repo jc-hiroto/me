@@ -20,7 +20,7 @@ import TMLogo from "../img/tm_logo.png"
 import MineNTULogo from "../img/minentu_logo.png"
 import FTCLogo from "../img/ftc_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGithub } from "react-icons/fa";
 
 
 const AboutContainer = ({name}) => {
@@ -46,7 +46,7 @@ const AboutContainer = ({name}) => {
     <Flex id={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="About" sup="👋" animate/>
       <Flex w="100%" minH="85vh" px="4vw" justifyContent="center" alignItems="start" flexDirection="row" flexWrap="wrap">
-        <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px={["2","8"]} m="4"
+        <Flex w={["100%","100%","100%","20%"]} py={["8","16"]} px={["8","8"]} m="4"
               justifyContent="center" 
               alignItems="center" 
               flexDirection="column" 
@@ -55,11 +55,15 @@ const AboutContainer = ({name}) => {
               boxShadow="">
           <Avatar mb="4" src={jcAvatar} alt='James avatar' name="James Chang" boxSize='128px'/>
           <Text fontSize="3xl" fontWeight="800" color={useColorModeValue("gray.800", "gray.200")}>James Chang</Text>
-          <Text as="i" fontSize="lg" fontWeight="300" color={useColorModeValue("gray.800", "gray.200")}>Po-Hao Chang</Text>
+          <HStack>
+            <Icon as={FaGithub} boxSize="4" color={useColorModeValue("gray.800", "gray.200")}/>
+            <Text fontFamily="monospace" fontSize="lg" fontWeight="300" color={useColorModeValue("gray.800", "gray.200")}>jc-hiroto</Text>
+          </HStack>
           <Divider w="50%" my={["4","8"]} borderColor={useColorModeValue("gray.500", "gray.500")}/>
-          <Text fontSize="lg" fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>👨‍🎓 Engineering Student</Text>
-          <Text fontSize="lg" fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>👨‍💻 Developer</Text>
-          <Text fontSize="lg" fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>📸 Photographer</Text>
+          <Flex alignItems="center" justifyContent="center" flexDirection="row">
+
+          </Flex>
+          <Text fontSize="lg" fontWeight="500" color={useColorModeValue("gray.800", "gray.200")}>Hi 👋 I am a Taiwanese dev based in Mountain View.</Text>
           <Divider w="50%" my={["4","8"]} borderColor={useColorModeValue("gray.500", "gray.500")}/>
           <Button size="md" leftIcon={<FaDownload/>} variant="ghost" color="blue.500" onClick={() => window.open("https://github.com/jc-hiroto/me/blob/master/public/po_hao_chang_resume.pdf", "_blank")}>Save my résumé</Button>
         </Flex>
