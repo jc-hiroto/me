@@ -42,13 +42,13 @@ function ProjectCard({project, index}) {
     const notify_icon_variants = {
       initial: {
         opacity: 0.5,
-        y: 1,
-        rotateZ: -45,
+        y: 0,
+        rotateZ: -225,
       },
       hover: {
         opacity: 1,
-        y: 1,
-        rotateZ: -225,
+        y: 3,
+        rotateZ: -405,
         transition: {
           ease: "easeInOut",
           duration: 0.4,

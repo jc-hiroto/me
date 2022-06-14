@@ -27,9 +27,10 @@ function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pageP
   const bg_color = useColorModeValue("white", "gray.900")
   const text_color = useColorModeValue("gray.500", "gray.300")
   const spring = {
-    type: 'spring',
-    stiffness: 600,
-    damping: 60,
+    type: "spring",
+    stiffness: 100,
+    mass: 0.5,
+    damping: 5,
   }
   if(isMobile) {
     return(

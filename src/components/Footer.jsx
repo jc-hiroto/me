@@ -7,7 +7,7 @@ import {
   useMediaQuery,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaCodeBranch, FaGithub } from "react-icons/fa"
+import { FaCodeBranch, FaEnvelope, FaGithub } from "react-icons/fa"
 
 function Footer() {
   const version = "v1.0 (20220613)"
@@ -24,7 +24,8 @@ function Footer() {
             <Text fontSize="8" fontWeight="500" color={text_color} >{version}</Text>
           </HStack>
         </Flex>
-        <IconButton icon={<FaGithub size="1.5em"/>} size="md" aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
+        <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color="gray.500" onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
+        <IconButton icon={<FaGithub size="1.5em"/>} size="sm" aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
       </Flex>
     </Flex>
     );
@@ -40,6 +41,7 @@ function Footer() {
       </HStack>
       <HStack spacing={2}>
         <Text fontSize="sm" fontWeight="500" color={text_color} >Copyright © 2022 James Chang. All rights reserved.</Text>
+        <IconButton icon={<FaEnvelope size="1.5em"/>} size="sm" aria-label="Email" variant="ghost" color="gray.500" onClick={() => window.open("mailto:contact@jchiroto.dev")} _focus={{ boxShadow: "none", }}/>
         <IconButton icon={<FaGithub size="1.5em"/>} size="sm" aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => window.open("https://github.com/jc-hiroto/me", "_blank")} _focus={{ boxShadow: "none", }}/>
       </HStack>
     </Flex>

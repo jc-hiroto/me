@@ -7,6 +7,7 @@ import {
   HStack,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa"
 import { animateScroll as scroll, scroller } from 'react-scroll'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
@@ -14,11 +15,8 @@ import Footer from "./components/Footer";
 import HeaderBar from "./components/HeaderBar";
 import WelcomeContainer from "./containers/WelcomeContainer";
 import AboutContainer from './containers/AboutContainer';
-import SectionTitle from './components/SectionTitle';
-import jcMemojiCoding from "./img/jc_memoji_coding.png"
 import ContactContainer from './containers/ContactContainer';
 import DevContainer from './containers/DevContainer';
-import Flashcards from './components/FlashCards';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
@@ -51,7 +49,9 @@ function App() {
     <Flex flexDirection="column" alignItems="center" justifyContent="start" bg={useColorModeValue("white", "gray.900")}>
       <HeaderBar sections={sections} handleScrollToSection={handleScrollToSection} scroll={scroll} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
-      <IconButton mt="4" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("About")} _focus={{ boxShadow: "none", }}/>
+      <motion.div animate={{y: [-20, 0, -20], scale:[1.1, 1, 1.1]}} transition={{delay: 2,repeat: Infinity, repeatType: "reverse", duration:2, repeatDelay: 1}}>
+        <IconButton mt="4" mb="10vh" icon={<FaArrowDown size="1.5em"/>} aria-label="GitHub" variant="ghost" color="gray.500" onClick={() => handleScrollToSection("About")} _focus={{ boxShadow: "none", }}/>
+      </motion.div>
       <AboutContainer name="About" />
       <DevContainer name="Projects" />
       <ContactContainer name="Contact" />
