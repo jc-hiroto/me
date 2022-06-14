@@ -13,19 +13,16 @@ import {
   useColorMode,
   useColorModeValue,
   useMediaQuery,
-  Box
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { FaBars, FaMoon } from "react-icons/fa"
-import { MdWbSunny } from "react-icons/md"
+import { FaBars } from "react-icons/fa"
 import jcMemojiWink from "../img/jc_memoji_wink.png"
 
 function HeaderBar({ sections, handleScrollToSection, scroll, isAtPageTop, pagePosition }) {
   const { colorMode, toggleColorMode } = useColorMode()
   const [ isMobile ] = useMediaQuery("(max-width: 768px)")
   const bg_color = useColorModeValue("white", "gray.900")
-  const text_color = useColorModeValue("gray.500", "gray.300")
   const spring = {
     type: "spring",
     stiffness: 100,

@@ -1,14 +1,9 @@
-import jcMemojiWink from "../img/jc_memoji_wink.png"
 import {
   Text,
   Flex,
-  Image,
   useColorModeValue,
   useMediaQuery,
-  HStack,
 } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { Parallax } from "react-parallax";
 import RandomMemoji from "../components/RandomMemoji";
 
 const WelcomeContainer = ({name}) => {

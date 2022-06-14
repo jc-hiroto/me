@@ -1,6 +1,5 @@
 import { HStack, Text, useColorModeValue } from "@chakra-ui/react";
-import { Parallax } from "react-scroll-parallax";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion } from "framer-motion";
 const SectionTitle = ({base, sup, animate}) => {
   const titleColor = useColorModeValue("gray.600", "gray.300");
   const emoji_variants = {

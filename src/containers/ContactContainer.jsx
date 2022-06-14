@@ -2,14 +2,12 @@ import {
   Button,
   Divider,
   Flex,
-  HStack,
   Image,
   Text,
   useMediaQuery,
   useColorModeValue,
-  color,
 } from "@chakra-ui/react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { Parallax } from "react-scroll-parallax";
 import SectionTitle from "../components/SectionTitle";
 import jcMemojiCallMe from "../img/jc_memoji_call_me.png"
