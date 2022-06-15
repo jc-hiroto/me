@@ -21,7 +21,7 @@ import { HashLink } from 'react-router-hash-link';
 
 
 const scroll_config = {duration: 1000, delay: 0,smooth: "easeInOutQuad", offset: -60};
-const sections = ["about", "projects", "contact"];
+const sections = ["about", "experience", "projects", "contact"];
 
 function App() {
   

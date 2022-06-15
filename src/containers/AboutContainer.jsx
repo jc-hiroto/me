@@ -107,7 +107,7 @@ const AboutContainer = ({name}) => {
 
           </Flex>
         </Flex>
-        <Flex w="100%" pt="16" pb="32" flexDirection="row" bg={bg_color} px={["8","16"]} flexWrap="wrap" gap="8">
+        <Flex id="experience" w="100%" pt="16" pb="32" flexDirection="row" bg={bg_color} px={["8","16"]} flexWrap="wrap" gap="8">
           <Flex 
             justifyContent="start" 
             alignItems="start" 
