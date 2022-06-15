@@ -71,7 +71,7 @@ function ProjectCard({project, index}) {
             </HStack>
             <Text mb="8" fontSize={["md", "md"]} fontWeight="500" color={{titleColor}}>{desc}</Text>
           </Flex>
-          <Flex w="100%" justifyContent="end" alignItems="center" flexDirection="row">
+          <Flex w="100%" justifyContent="flex-end" alignItems="center" flexDirection="row">
             <motion.div variants={notify_text_variants}>
               <Text as="i" mr="2" fontSize={["sm", "sm"]} fontWeight="700" color="gray.500">Click to know more</Text>
             </motion.div>
