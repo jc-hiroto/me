@@ -5,24 +5,21 @@ import {
   HStack,
   useColorModeValue,
   Avatar,
-  Divider,
   Spacer,
   VStack,
   Tag,
   Icon,
-  Button,
   chakra,
   Link
 } from "@chakra-ui/react";
 import SectionTitle from "../components/SectionTitle";
-import jcAvatar from "../img/jc_avatar.png"
 import NTULogo from "../img/ntu_logo.png"
 import CMULogo from "../img/cmu_logo.png"
 import TMLogo from "../img/tm_logo.png"
 import MineNTULogo from "../img/minentu_logo.png"
 import FTCLogo from "../img/ftc_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
-import { FaDownload, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaDownload, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 
@@ -33,7 +30,7 @@ const AboutContainer = ({name}) => {
       <HStack spacing={4}>
         <Avatar src={logo} alt={"logo of"+name} name={name} boxSize={['32px','48px','64px']}/>
         <Flex flexDirection="column" justifyContent="start" alignItems="start">
-          <Text fontSize={["lg","lg", "2xl"]} fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>{name}</Text>
+          <Text fontSize={["xl","xl", "2xl"]} fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>{name}</Text>
           <Flex w="100%" flexWrap="wrap" alignItems="center" css={{gap: "0.5em"}}>
             <Text mr="2" as="i" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.800", "gray.400")}>{position}</Text>
             <Tag color={useColorModeValue("gray.800" ,"gray.300")} size="sm" variant="outline">{time}</Tag>
@@ -46,7 +43,7 @@ const AboutContainer = ({name}) => {
     );
   };
   return(
-    <Flex id={name} w="100%" minH="95vh" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
+    <Flex id={name} w="100%" pt="5vh" justifyContent="start" alignItems="center" flexDirection="column">
       <SectionTitle base="About" sup="🙌" animate/>
       <Flex w="100%" minH="85vh" justifyContent="start" alignItems="start" flexDirection="column" flexWrap="wrap">
         <Flex w="100%" py={["16", "32"]} px={["8","16"]}
@@ -81,8 +78,7 @@ const AboutContainer = ({name}) => {
             </Text>
             <Text mb="4" fontSize={["3xl", "4xl", "5xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.500")} lineHeight="shorter">
               Recently, I've been working on
-              <chakra.span color={useColorModeValue("gray.700", "gray.300")}> Python</chakra.span>, 
-              <chakra.span color={useColorModeValue("gray.700", "gray.300")}> C++</chakra.span>, and
+              <chakra.span color={useColorModeValue("gray.700", "gray.300")}> Python</chakra.span> and
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}> JavaScript</chakra.span>.
             </Text>
             <HStack mt="8" spacing={["8","16"]}>

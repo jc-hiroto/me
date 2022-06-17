@@ -57,7 +57,7 @@ function ProjectCard({project, index}) {
     }
     return(
       <>
-        <Image w="100%" fit="cover" maxH="200px" src={img} alt={"Image of "+name} borderTopLeftRadius="xl" borderTopRightRadius="xl"/>
+        <Image w="100%" key={"card_front_img+"+index} fit="cover" maxH="200px" src={img} alt={"Image of "+name} borderTopLeftRadius="xl" borderTopRightRadius="xl"/>
         <Flex mx="4" my="4" key={index} justifyContent="space-between" alignItems="start" flexDirection="column">
           <Flex w="100%" key={index} justifyContent="start" alignItems="start" flexDirection="column">
             <Text fontSize={["xl","xl", "2xl"]} fontWeight="800" color={{titleColor}}>{title}</Text>
@@ -94,9 +94,9 @@ function ProjectCard({project, index}) {
               {
                 info.map((info, index) => {
                   return(
-                    <HStack my="2" spacing="3">
-                      <Text key={index} fontSize="3xl" fontWeight="500" color={{titleColor}}>{info.emoji}</Text>
-                      <Text key={index} fontSize="sm" fontWeight="500" color={{titleColor}}>{info.content}</Text>
+                    <HStack key={"info_stack_"+index} my="2" spacing="3">
+                      <Text key={"info_emoji_"+index} fontSize="3xl" fontWeight="500" color={{titleColor}}>{info.emoji}</Text>
+                      <Text key={"info_content_"+index} fontSize="sm" fontWeight="500" color={{titleColor}}>{info.content}</Text>
                     </HStack>
                   );
                 })
@@ -160,7 +160,7 @@ function ProjectCard({project, index}) {
         transition={{}}
         onClick={() => setIsSelected(!isSelected)}
       >
-        <motion.div class="w-100 h-100" initial={{opacity: 0}} animate={{opacity: 1.0}} key={isSelected} transition={{type: "tween"}}>
+        <motion.div initial={{opacity: 0}} animate={{opacity: 1.0}} key={isSelected} transition={{type: "tween"}}>
           {isSelected? backContent():frontContent()}
         </motion.div>
       </Flex>

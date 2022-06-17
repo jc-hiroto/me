@@ -13,6 +13,7 @@ import {
   useColorMode,
   useColorModeValue,
   useMediaQuery,
+  Link,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
@@ -32,7 +33,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
   }
   if(isMobile) {
     return(
-      <Flex w="100%" h="64px" px="2" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="box-shadow ease-in-out 500ms">
+      <Flex w="100%" h="64px" px="2" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000">
         <Menu>
           <MenuButton as={IconButton} size="sm" aria-label='Options' icon={<FaBars />} variant='ghost' _focus={{ boxShadow: "none", }} />
           <MenuList>
@@ -40,7 +41,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
               sections.map((section, index) => {
                 return(
                   <HashLink key={index} to={`#${section}`} smooth>
-                    <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none" }} smooth>
+                    <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none" }}>
                       <Text fontSize="md" fontWeight="600" key={"text_sec_"+index}>{section}</Text>
                     </MenuItem>
                   </HashLink>
@@ -63,17 +64,16 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
     );
   }
   return (
-    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" boxShadow={isAtPageTop ? "":"lg"} transition="box-shadow ease-in-out 500ms">
+    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000">
       <HashLink to="/#top" smooth>
         <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' cursor="pointer"/>
       </HashLink>
-      <HStack spacing={4}>
+      <HStack spacing={8}>
         {
           sections.map((section, index) => {
-            const sec = Math.round(pagePosition)
             return(
               <HashLink key={"but_sec_"+index} to={"#"+section} smooth>
-                <Button variant={sec === (index+1) ? "solid":"ghost"} key={"but_sec_"+index} _focus={{ boxShadow: "none", }}><Text fontSize="md" fontWeight="600" key={"text_sec_"+index}>{section}</Text></Button>
+                <Text fontSize="md" fontWeight="700" key={"text_sec_"+index} _hover={{textDecoration: "underline"}}>{section}</Text>
               </HashLink>
             );
           })
