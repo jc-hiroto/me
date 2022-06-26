@@ -30,6 +30,8 @@ jobs:
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
           output_location: "/dist" # Built app content directory - optional
+        env:
+          VITE_GA4_ID: ${{ secrets.GA4_ID }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
