@@ -103,7 +103,7 @@ const AboutContainer = ({name}) => {
 
           </Flex>
         </Flex>
-        <Flex id="experience" w="100%" pt="16" pb="32" flexDirection="row" bg={bg_color} px={["8","16"]} flexWrap="wrap" gap="8">
+        <Flex id="experience" w="100%" pt="16" pb="32" px={{base: "8", md: "16", xl:"48"}} flexDirection="row" justifyContent={{base:"space-between"}} bg={bg_color}  flexWrap="wrap" gap="8">
           <Flex 
             justifyContent="start" 
             alignItems="start" 
@@ -115,11 +115,11 @@ const AboutContainer = ({name}) => {
             {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "2018 - 2022",   
               "Taipei, Taiwan")}  
           </Flex>
-          <Spacer my="4" />
           <Flex
             justifyContent="start" 
             alignItems="start" 
             flexDirection="column" 
+            mr={{base:"0", md:"16"}}
           >
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
