@@ -50,10 +50,10 @@ const projects = [
     desc: "Building a virtual campus in Minecraft to facilitate students’ social life despite distance learning.",
     period: "May. 2021 - Dec. 2021",
     info: [
-      {emoji: "⚡️", content:"Adopted scrum-based methodology and shortened development cycle to release new buildings biweekly."},
-      {emoji: "🤖", content:"Released a verification platform paired with a Discord bot in a week to process a maximum of 800 registrations per day."},
-      {emoji: "🙌", content: "Sponsored by Microsoft Azure and Industrial Development Bureau, MOEA to hold a thousand player grade NTU Minecraft graduation ceremony at June 2021."},
-      {emoji: "📥", content: "Preparing the donation of the Minecraft school map to the Gallery of NTU History."},
+      {emoji: "⚡️", content:"Adopted scrum to shorten development cycle and release new buildings biweekly."},
+      {emoji: "🤖", content:"Released linking platform and Discord bot in a week to process a maximum of 800 registrations per day."},
+      {emoji: "🤝", content: "Sponsored by Azure and Industrial Development Bureau to hold a Minecraft graduation ceremony in 2021."},
+      {emoji: "📥", content: "Donated the Minecraft school map to the Gallery of NTU History."},
     ],
     profession: ["Python", "Vue.js", "Azure"],
     btns: [
@@ -71,16 +71,16 @@ const projects = [
   },
   {
     title: "NTUCourse Neo",
-    img: "https://i.imgur.com/qf68MwM.png",
-    desc: "A redesigned course planning web service for students in National Taiwan University.",
+    img: "https://i.imgur.com/RraTCLn.png",
+    desc: "A redesigned course planning website for students in National Taiwan University.",
     period: "Nov. 2021 - Present",
     info: [
-      { emoji: "💪", content: "Assisted 2000+ students in course planning and gained 400+ registered users in a month."},
-      { emoji: "🚄", content: "Designed frontend interface using React to provide intuitive user experience."} ,
+      { emoji: "💪", content: "Assisted 5000+ students in course planning and gained 1500+ registered users."},
       { emoji: "🔐", content: "Defined RESTful API specification and implemented JWT authorization with Auth0 service. "},
-      { emoji: "⚡️", content: "Currently implementing a data proxy based on Azure Function App to parse live course waitlist data from the NTU course selection system."},
+      { emoji: "⚡️", content: "Implemented serverless functions to parse waitlist data from the official course registration system."},
+      { emoji: "🤝", content: "Acquired by Office of Academic Affairs of National Taiwan University in Q3 2022."},
     ],
-    profession: ["Node.js", "React", "MongoDB", "Azure"],
+    profession: ["Node.js", "React", "MongoDB", "PGSQL"],
     btns: [
       {
         title: "Repository",

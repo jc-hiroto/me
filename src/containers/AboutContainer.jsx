@@ -17,7 +17,7 @@ import NTULogo from "../img/ntu_logo.png"
 import CMULogo from "../img/cmu_logo.png"
 import TMLogo from "../img/tm_logo.png"
 import MineNTULogo from "../img/minentu_logo.png"
-import FTCLogo from "../img/ftc_logo.png"
+import NCNLogo from "../img/ncn_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaDownload, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -32,7 +32,7 @@ const AboutContainer = ({name}) => {
         <Flex flexDirection="column" justifyContent="start" alignItems="start">
           <Text fontSize={["xl","xl", "2xl"]} fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>{name}</Text>
           <Flex w="100%" flexWrap="wrap" alignItems="center" css={{gap: "0.5em"}}>
-            <Text mr="2" as="i" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.800", "gray.400")}>{position}</Text>
+            <Text mr="2" fontSize={["sm", "md"]} fontWeight="500" color={useColorModeValue("gray.600", "gray.400")}>{position}</Text>
             <Tag color={useColorModeValue("gray.800" ,"gray.300")} size="sm" variant="outline">{time}</Tag>
           </Flex>
           <Text mt="2" fontSize={["sm", "md"]} fontWeight="400" color={useColorModeValue("gray.800", "gray.200")}>
@@ -110,10 +110,11 @@ const AboutContainer = ({name}) => {
             flexDirection="column" 
           >
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Education</Text>
-            {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "2022 - 2024 (Expected)", "Mountain View, CA")}  
+            {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "2022 - 2024 (Expected)",
+              "Incoming student started in Fall 2022 ・ Mountain View, CA")}
             <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-            {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "2018 - 2022",   
-              "Taipei, Taiwan")}  
+            {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "2018 - 2022",
+              "GPA: 4.07/4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan")}
           </Flex>
           <Flex
             justifyContent="start" 
@@ -124,14 +125,17 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
-              {ExpSection("Trend Micro", TMLogo, "Cloud Development Engineer", "Sep. 2021 - Mar. 2022",   
-              "Developing and testing cloud-based device vulnerability scanning backend service.")}
+              {ExpSection("National Taiwan University", NTULogo, "Full Stack Developer", "Aug. 2022 - Present",   
+              "Working on a next-generation course planning tool (previously NTUCourse Neo) at the Computer Information Management Division, Office of Academic Affairs of NTU. Leading backend development team to integrate services with existing school interfaces and migrate to self-hosting infrastructure.")}
+              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
+              {ExpSection("NTUCourse Neo Team", NCNLogo, "Co-Founder, Full Stack Developer", "Nov. 2021 - Aug. 2022",   
+              "Developed a redesigned course planning service for National Taiwan University, which assisted 5000+ students in course planning.")}
+              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
+              {ExpSection("Trend Micro Inc.", TMLogo, "SDE Intern → Cloud Development Engineer", "Sep. 2021 - Mar. 2022",   
+              "Worked on backend services in Trend Micro Vision One™ Device Vulnerability Scanning Service (DVASS) team.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("MineNTU Team", MineNTULogo, "Co-Founder, Software Engineer", "May 2021 - Dec. 2021",   
-              "Building a virtual campus in Minecraft to facilitate students’ social life despite distance learning.")}
-              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("FIRST Tech Challenge (FTC)", FTCLogo, "Robot and Java Software Engineer", "Jan. 2016 - Oct. 2016",   
-              "Participated as a member of the Taiwan national team to compete with 128 international groups.")}
+              "Created a virtual campus in Minecraft to facilitate students’ social life despite distance learning.")}
             </VStack>
           </Flex>
         </Flex>
