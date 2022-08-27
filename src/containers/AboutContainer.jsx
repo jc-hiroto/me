@@ -73,7 +73,7 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize={["3xl", "4xl", "5xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.500")} lineHeight="shorter">
               I am experienced in
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}> Cloud Computing</chakra.span>, 
-              <chakra.span color={useColorModeValue("gray.700", "gray.300")}> Web Development</chakra.span>, and
+              <chakra.span color={useColorModeValue("gray.700", "gray.300")}> Full Stack Development</chakra.span>, and
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}> DevOps</chakra.span>.
             </Text>
             <Text mb="4" fontSize={["3xl", "4xl", "5xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.500")} lineHeight="shorter">
@@ -111,7 +111,7 @@ const AboutContainer = ({name}) => {
           >
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Education</Text>
             {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "2022 - 2024 (Expected)",
-              "Incoming student started in Fall 2022 ・ Mountain View, CA")}
+              "Mountain View, CA")}
             <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
             {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "2018 - 2022",
               "GPA: 4.07/4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan")}
@@ -125,13 +125,13 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
-              {ExpSection("National Taiwan University", NTULogo, "Full Stack Developer", "Aug. 2022 - Present",   
-              "Working on a next-generation course planning tool (previously NTUCourse Neo) at the Computer Information Management Division, Office of Academic Affairs of NTU. Leading backend development team to integrate services with existing school interfaces and migrate to self-hosting infrastructure.")}
+              {ExpSection("National Taiwan University", NTULogo, "Full Stack Developer", "Jun. 2022 - Aug. 2022",   
+              "Worked on next-gen course planning tool at the Computer Information Management Division, Office of Academic Affairs of NTU.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("NTUCourse Neo Team", NCNLogo, "Co-Founder, Full Stack Developer", "Nov. 2021 - Aug. 2022",   
+              {ExpSection("NTUCourse Neo Team", NCNLogo, "Co-Founder, Full Stack Developer", "Nov. 2021 - Jun. 2022",   
               "Developed a redesigned course planning service for National Taiwan University, which assisted 5000+ students in course planning.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("Trend Micro Inc.", TMLogo, "SDE Intern → Cloud Development Engineer", "Sep. 2021 - Mar. 2022",   
+              {ExpSection("Trend Micro Inc.", TMLogo, "SDE Intern → Cloud Development Engineer", "Jun. 2021 - Mar. 2022",   
               "Worked on backend services in Trend Micro Vision One™ Device Vulnerability Scanning Service (DVASS) team.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("MineNTU Team", MineNTULogo, "Co-Founder, Software Engineer", "May 2021 - Dec. 2021",   

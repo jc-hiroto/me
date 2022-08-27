@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { FaArrowDown } from "react-icons/fa"
-import { animateScroll as scroll, scroller } from 'react-scroll'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Footer from "../components/Footer";
 import HeaderBar from "../components/HeaderBar";
