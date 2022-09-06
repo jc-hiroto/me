@@ -82,7 +82,7 @@ const AboutContainer = ({name}) => {
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}> JavaScript</chakra.span>.
             </Text>
             <HStack mt="8" spacing={["8","16"]}>
-              <Link href="https://github.com/jc-hiroto/me/raw/master/public/po_hao_chang_resume.pdf" isExternal>
+              <Link href="resume">
                 <HStack spacing="2">
                   <Icon as={FaDownload} boxSize={["4","6"]} color={useColorModeValue("gray.500", "gray.400")}/>
                   <Text fontSize={["md", "xl", "3xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.400")}>
@@ -98,7 +98,6 @@ const AboutContainer = ({name}) => {
                   </Text>
                 </HStack>
               </Link>
-              
             </HStack>
 
           </Flex>

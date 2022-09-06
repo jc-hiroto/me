@@ -13,12 +13,12 @@ import {
   useColorMode,
   useColorModeValue,
   useMediaQuery,
-  Link,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { FaBars } from "react-icons/fa"
+import { FaBars, FaDownload } from "react-icons/fa"
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import jcMemojiWink from "../img/jc_memoji_wink.png"
 
 function HeaderBar({ sections, isAtPageTop, pagePosition }) {
@@ -48,6 +48,14 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
                 );
               })
             }
+            <Link to="resume">
+              <MenuItem _focus={{ boxShadow: "none" }}>
+                <HStack>
+                  <Text fontSize="md" fontWeight="600">resume</Text>
+                  <FaDownload />
+                </HStack>
+              </MenuItem>
+            </Link>
           </MenuList>
         </Menu>
         <HashLink to="/#top" smooth>
@@ -78,6 +86,12 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             );
           })
         }
+        <Link to="resume">
+          <HStack>
+            <Text fontSize="md" fontWeight="700" _hover={{textDecoration: "underline"}}>resume</Text>
+            <FaDownload />
+          </HStack>
+        </Link>
       </HStack>
       <HStack spacing={2}>
         <motion.div transition={spring} whileTap={{rotate: 180, opacity:0}} whileHover={{scale: 1.1}}>
