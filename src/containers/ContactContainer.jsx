@@ -28,12 +28,12 @@ const ContactContainer = ({name}) => {
         <Flex p="8" mb="40" w={["85vw","85vw","60vw"]} justifyContent="center" alignItems="start" flexDirection="column" bg={useColorModeValue("gray.50", "gray.800")}  borderRadius="lg" boxShadow="xl" zIndex="100"> 
         <Flex w="100%" my="2" justifyContent="space-between" flexWrap="wrap" gap="2">
             <Text fontSize={["lg","3xl"]} fontWeight="600" color={useColorModeValue("gray.700", "gray.300")}>💻  For my coding works... </Text>
-            <Button mt={isMobile? "2":"0"} size={isMobile? "md":"lg"} leftIcon={<FaGithub/>} color="white" bg="gray.700" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("https://github.com/jc-hiroto", "_blank")}>GitHub</Button>
+            <Button mt={isMobile? "2":"0"} size={isMobile? "md":"lg"} leftIcon={<FaGithub/>} color="white" bg="gray.700" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("github", "_blank")}>GitHub</Button>
           </Flex>
           <Divider my="8" borderColor={useColorModeValue("gray.300", "gray.700")} />
           <Flex w="100%" my="2" justifyContent="space-between" flexWrap="wrap" gap="2">
             <Text fontSize={["lg","3xl"]} fontWeight="600" color={useColorModeValue("gray.700", "gray.300")} >💼  For career opportunities... </Text>
-            <Button mt={isMobile? "2":"0"} size={isMobile? "md":"lg"} leftIcon={<FaLinkedin/>} color="white" bg="blue.600" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("https://www.linkedin.com/in/jc-hiroto/", "_blank")}>LinkedIn</Button>
+            <Button mt={isMobile? "2":"0"} size={isMobile? "md":"lg"} leftIcon={<FaLinkedin/>} color="white" bg="blue.600" _hover={{bg: "gray.200", color:"gray.600"}} onClick={() => window.open("linkedin", "_blank")}>LinkedIn</Button>
           </Flex>
         </Flex>
       </Flex>

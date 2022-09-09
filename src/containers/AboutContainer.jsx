@@ -90,7 +90,7 @@ const AboutContainer = ({name}) => {
                   </Text>
                 </HStack>
               </Link>
-              <Link href="https://twitter.com/jc_hiroto_" isExternal>
+              <Link href="twitter" isExternal>
                 <HStack spacing="2">
                   <Icon as={FaTwitter} boxSize={["4","6"]} color={useColorModeValue("gray.500", "gray.400")}/>
                   <Text fontSize={["md", "xl", "3xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.400")}>
