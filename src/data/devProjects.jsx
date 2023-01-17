@@ -46,7 +46,7 @@ const projects = [
   },
   {
     title: "MineNTU - NTU in Minecraft",
-    img: "https://minecraft.myntu.me/img/building-b1.06b36fcf.jpeg",
+    img: "https://i.imgur.com/VhD3QFb.gif",
     desc: "Building a virtual campus in Minecraft to facilitate students’ social life despite distance learning.",
     period: "May. 2021 - Dec. 2021",
     info: [
@@ -80,7 +80,7 @@ const projects = [
       { emoji: "⚡️", content: "Implemented serverless functions to parse waitlist data from the official course registration system."},
       { emoji: "🤝", content: "Acquired by Office of Academic Affairs of National Taiwan University in Q3 2022."},
     ],
-    profession: ["Node.js", "React", "MongoDB", "PGSQL"],
+    profession: ["Node.js", "React", "Python", "MongoDB", "PGSQL"],
     btns: [
       {
         title: "Repository",
