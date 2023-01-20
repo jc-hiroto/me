@@ -124,6 +124,9 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
+              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - Present",   
+              "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa.")}
+              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Teaching Assistant", "Jan. 2023 - Present",   
               "Teaching Assistant of 18-631 Introduction to Information Security course.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />

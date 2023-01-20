@@ -94,6 +94,19 @@ const projects = [
       }
     ]
   },
+  {
+    title: "Emergency Social Network",
+    img: "https://i.imgur.com/Upd4xZa.png",
+    desc: "A social network for people to share their emergency information and help each other during earthquakes.",
+    period: "Aug. 2022 - Dec. 2022",
+    info: [
+      { emoji: "📄", content: "Quality Attributes: Reliability, Robustness, Maintainability."},
+      { emoji: "👀", content: "Adopted Typescript to support static type checking and reduce runtime errors."},
+      { emoji: "🏗", content: "Strictly layered architecture reduces complexity through low coupling."},
+    ],
+    profession: ["Node.js", "Typescript", "Redis", "TailwindCSS"],
+    btns: []
+  },
 ];
 
 export { projects };
