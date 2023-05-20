@@ -16,8 +16,8 @@ import SectionTitle from "../components/SectionTitle";
 import NTULogo from "../img/ntu_logo.png"
 import CMULogo from "../img/cmu_logo.png"
 import TMLogo from "../img/tm_logo.png"
-import MineNTULogo from "../img/minentu_logo.png"
 import NCNLogo from "../img/ncn_logo.png"
+import AWSLogo from "../img/aws_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
 import { FaDownload, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -124,7 +124,10 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
-              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - Present",   
+              {ExpSection("Amazon Web Services (AWS)", AWSLogo, "Software Engineer Intern", "May 2023 - Present",   
+              "Amazon Redshift distributed systems and cluster availability.")}
+              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
+              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - May 2023",   
               "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Teaching Assistant", "Jan. 2023 - Present",   
@@ -138,9 +141,6 @@ const AboutContainer = ({name}) => {
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("Trend Micro Inc.", TMLogo, "SDE Intern → Cloud Development Engineer", "Jun. 2021 - Mar. 2022",   
               "Worked on backend services in Trend Micro Vision One™ Device Vulnerability Scanning Service (DVASS) team.")}
-              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("MineNTU Team", MineNTULogo, "Co-Founder, Software Engineer", "May 2021 - Dec. 2021",   
-              "Created a virtual campus in Minecraft to facilitate students’ social life despite distance learning.")}
             </VStack>
           </Flex>
         </Flex>
