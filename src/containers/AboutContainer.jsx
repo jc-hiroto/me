@@ -19,7 +19,7 @@ import TMLogo from "../img/tm_logo.png"
 import NCNLogo from "../img/ncn_logo.png"
 import AWSLogo from "../img/aws_logo.png"
 import { BsThreeDotsVertical } from "react-icons/bs"
-import { FaDownload, FaTwitter } from "react-icons/fa";
+import { FaDownload, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 
@@ -90,11 +90,11 @@ const AboutContainer = ({name}) => {
                   </Text>
                 </HStack>
               </Link>
-              <Link href="twitter" isExternal>
+              <Link href="linkedin" isExternal>
                 <HStack spacing="2">
-                  <Icon as={FaTwitter} boxSize={["4","6"]} color={useColorModeValue("gray.500", "gray.400")}/>
+                  <Icon as={FaLinkedin} boxSize={["4","6"]} color={useColorModeValue("gray.500", "gray.400")}/>
                   <Text fontSize={["md", "xl", "3xl"]} fontWeight="600" color={useColorModeValue("gray.500", "gray.400")}>
-                    @jc_hiroto_
+                    @jc-hiroto
                   </Text>
                 </HStack>
               </Link>
@@ -124,13 +124,13 @@ const AboutContainer = ({name}) => {
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Experience</Text>
 
             <VStack justifyContent="start" alignItems="start">
-              {ExpSection("Amazon Web Services (AWS)", AWSLogo, "Software Engineer Intern", "May 2023 - Present",   
+              {ExpSection("Amazon Web Services (AWS)", AWSLogo, "Software Engineer Intern (DB)", "May 2023 - Aug. 2023",   
               "Amazon Redshift distributed systems and cluster availability.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - May 2023",   
               "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Teaching Assistant", "Jan. 2023 - Present",   
+              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Teaching Assistant", "Jan. 2023 - May 2023",   
               "Teaching Assistant of 18-631 Introduction to Information Security course.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("National Taiwan University", NTULogo, "Full Stack Developer", "Jun. 2022 - Aug. 2022",   
