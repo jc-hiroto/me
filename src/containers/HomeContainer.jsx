@@ -40,7 +40,7 @@ function HomeContainer() {
     );
   };
   return (
-    <Flex flexDirection="column" alignItems="center" justifyContent="start" bg={useColorModeValue("white", "gray.900")}>
+    <Flex flexDirection="column" alignItems="center" justifyContent="start" bg={useColorModeValue("white", "black")}>
       <HeaderBar sections={sections} isAtPageTop={isAtPageTop} pagePosition={pagePosition}/>
       <WelcomeContainer />
       <motion.div animate={{y: [-20, 0, -20], scale:[1.1, 1, 1.1]}} transition={{delay: 2,repeat: Infinity, repeatType: "reverse", duration:2, repeatDelay: 1}}>

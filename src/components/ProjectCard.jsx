@@ -18,7 +18,7 @@ import { FaReply } from "react-icons/fa";
 function ProjectCard({project, index}) {
   const [isSelected, setIsSelected] = React.useState(false);
   const [isMobile] = useMediaQuery("(max-width: 760px)");
-  const bgColor = useColorModeValue("gray.50", "gray.800");
+  const bgColor = useColorModeValue("gray.50", "#111111");
   const btnColor = useColorModeValue("gray.500", "gray.700");
   const titleColor = useColorModeValue("gray.700", "gray.300")
   const {title, img, desc, period, info, profession, btns} = project;

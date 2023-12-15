@@ -11,7 +11,7 @@ import {
 import { FaCodeBranch, FaEnvelope, FaGithub } from "react-icons/fa"
 
 function Footer() {
-  const version = "build 20230721";
+  const version = "build 20231214";
   const text_color = useColorModeValue("gray.400", "gray.600");
   const [isMobile] = useMediaQuery("(max-width: 760px)");
   if(isMobile) {
@@ -34,7 +34,7 @@ function Footer() {
     );
   }
   return (
-    <Flex w="100%" h="5vh" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" >
+    <Flex w="100%" h="5vh" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" fontFamily="mono">
       <HStack>
         <Link href="https://jchiroto.dev/" _hover={{ textDecoration: "none" }}>
           <Text mr="4" fontSize="lg" fontWeight="600" color={text_color}>jchiroto.dev</Text>

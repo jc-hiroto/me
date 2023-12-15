@@ -5,7 +5,6 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import RandomMemoji from "../components/RandomMemoji";
-import SeekingBanner from "../components/SeekingBanner";
 
 const WelcomeContainer = ({name}) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
@@ -17,8 +16,7 @@ const WelcomeContainer = ({name}) => {
           <RandomMemoji size={isMobile? '128px':'200px'} offsetY={isMobile? 30 : 60}/>
           <Text fontSize={["6xl","8xl"]} fontWeight="700" color={titleColor}>James</Text>
         </Flex>
-        <Text fontSize={["md","2xl"]} fontWeight="500" color={secondaryColor}>engineering student, developer</Text>
-        <SeekingBanner />
+        <Text fontSize={["md","2xl"]} fontWeight="500" color={secondaryColor} fontFamily="mono">developer + photographer</Text>
       </Flex>
   );
 };

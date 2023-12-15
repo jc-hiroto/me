@@ -24,7 +24,7 @@ import { motion } from "framer-motion";
 
 
 const AboutContainer = ({name}) => {
-  const bg_color = useColorModeValue("gray.50", "gray.800");
+  const bg_color = useColorModeValue("gray.50", "#111111");
   const ExpSection = (name, logo, position, time, desc) => {
     return(
       <HStack spacing={4}>
@@ -103,17 +103,25 @@ const AboutContainer = ({name}) => {
           </Flex>
         </Flex>
         <Flex id="experience" w="100%" pt="16" pb="32" px={{base: "8", md: "16", xl:"36"}} flexDirection="row" justifyContent={{base:"space-between"}} bg={bg_color}  flexWrap="wrap" gap="8">
-          <Flex 
+          <Flex
+            w="100%"
             justifyContent="start" 
             alignItems="start" 
             flexDirection="column" 
           >
             <Text mb="4" fontSize="4xl" fontWeight="700" color={useColorModeValue("gray.800", "gray.200")}>Education</Text>
-            {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "Aug. 2022 - Dec. 2023 (Expected)",
-              "GPA: 4.0/4.0 ・ Mountain View, CA")}
-            <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-            {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "Sep. 2018 - Jan. 2022",
-              "GPA: 4.07/4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan")}
+            <Flex 
+              w="100%"
+              justifyContent={{base:"start", md:"space-between"}}
+              alignItems={{base:"start", md:"center"}}
+              flexDirection={{base:"column", md:"row"}}
+            >
+              {ExpSection("Carnegie Mellon University", CMULogo, "M.S. in Software Engineering", "Aug. 2022 - Dec. 2023",
+                "GPA: 3.95 / 4.0 ・ Mountain View, CA")}
+              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} display={{ base:"block", md:"none"}}/>
+              {ExpSection("National Taiwan University", NTULogo, "B.S.E in Department of Engineering Science and Ocean Engineering", "Sep. 2018 - Jan. 2022",
+                "GPA: 4.07 / 4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan")}
+            </Flex>
           </Flex>
           <Flex
             justifyContent="start" 
@@ -125,13 +133,10 @@ const AboutContainer = ({name}) => {
 
             <VStack justifyContent="start" alignItems="start">
               {ExpSection("Amazon Web Services (AWS)", AWSLogo, "Software Engineer Intern (DB)", "May 2023 - Aug. 2023",   
-              "Amazon Redshift distributed systems and cluster availability.")}
+              "Worked on query monitoring at Redshift Distributed System and Cluster Availability team.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - May 2023",   
+              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Research Assistant", "Jan. 2023 - Dec. 2023",   
               "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa.")}
-              <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
-              {ExpSection("Carnegie Mellon University", CMULogo, "Graduate Teaching Assistant", "Jan. 2023 - May 2023",   
-              "Teaching Assistant of 18-631 Introduction to Information Security course.")}
               <Icon w={['32px','48px','64px']} as={BsThreeDotsVertical} color={useColorModeValue("gray.600", "gray.600")} />
               {ExpSection("National Taiwan University", NTULogo, "Full Stack Developer", "Jun. 2022 - Aug. 2022",   
               "Worked on next-gen course planning tool at the Office of Academic Affairs of NTU.")}

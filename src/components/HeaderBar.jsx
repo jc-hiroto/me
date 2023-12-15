@@ -4,6 +4,7 @@ import {
   IconButton,
   Icon,
   Button,
+  Link as CLink,
   HStack,
   Image,
   Menu,
@@ -16,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import { FaBars, FaDownload } from "react-icons/fa"
+import { FaBars, FaDownload, FaExternalLinkAlt } from "react-icons/fa"
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import jcMemojiWink from "../img/jc_memoji_wink.png"
@@ -24,7 +25,7 @@ import jcMemojiWink from "../img/jc_memoji_wink.png"
 function HeaderBar({ sections, isAtPageTop, pagePosition }) {
   const { colorMode, toggleColorMode } = useColorMode()
   const [ isMobile ] = useMediaQuery("(max-width: 768px)")
-  const bg_color = useColorModeValue("white", "gray.900")
+  const bg_color = useColorModeValue("white", "black")
   const spring = {
     type: "spring",
     stiffness: 100,
@@ -33,16 +34,16 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
   }
   if(isMobile) {
     return(
-      <Flex w="100%" h="64px" px="2" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000">
+      <Flex w="100%" h="64px" px="2" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" fontFamily="mono">
         <Menu>
-          <MenuButton as={IconButton} size="sm" aria-label='Options' icon={<FaBars />} variant='ghost' _focus={{ boxShadow: "none", }} />
-          <MenuList>
+          <MenuButton as={IconButton} size="md" aria-label='Options' icon={<FaBars />} variant='ghost' _focus={{ boxShadow: "none", }} />
+          <MenuList bg={bg_color}>
             {
               sections.map((section, index) => {
                 return(
                   <HashLink key={index} to={`#${section}`} smooth>
                     <MenuItem key={"but_sec_"+index} _focus={{ boxShadow: "none" }}>
-                      <Text fontSize="md" fontWeight="600" key={"text_sec_"+index}>{section}</Text>
+                      <Text fontSize="md" fontWeight="500" key={"text_sec_"+index}>{section}</Text>
                     </MenuItem>
                   </HashLink>
                 );
@@ -56,10 +57,19 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
                 </HStack>
               </MenuItem>
             </Link>
+            <CLink href="https://blog.jchiroto.dev" isExternal>
+              <MenuItem _focus={{ boxShadow: "none" }}>
+                <HStack>
+                  <Text fontSize="md" fontWeight="600">blog</Text>
+                  <FaExternalLinkAlt />
+                </HStack>
+              </MenuItem>
+            </CLink>
           </MenuList>
         </Menu>
         <HashLink to="/#top" smooth>
-          <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' cursor="pointer" opacity={isAtPageTop? "0":"1"} transition="opacity ease-in-out 500ms"/>
+          <Text fontSize="md" fontWeight="600" color={useColorModeValue("gray.600", "gray.300")} cursor="pointer" opacity={isAtPageTop? "0":"1"} transition="opacity ease-in-out 500ms">James</Text>
+          {/* <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' /> */}
         </HashLink>
         <motion.div transition={spring} whileTap={{rotate: 180, opacity: 0}}>
           <Flex onClick={toggleColorMode} variant={colorMode === "ghost"} _focus={{ boxShadow: "none", }} p="3">
@@ -72,26 +82,32 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
     );
   }
   return (
-    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000">
+    <Flex w="100%" h="64px" px="8" justifyContent="space-between" alignItems="center" flexDirection="row" position="fixed" bg={bg_color} zIndex="1000" fontFamily="mono">
       <HashLink to="/#top" smooth>
         <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' cursor="pointer"/>
       </HashLink>
-      <HStack spacing={8}>
+      <HStack spacing={10}>
         {
           sections.map((section, index) => {
             return(
               <HashLink key={"but_sec_"+index} to={"#"+section} smooth>
-                <Text fontSize="md" fontWeight="700" key={"text_sec_"+index} _hover={{textDecoration: "underline"}}>{section}</Text>
+                <Text fontSize="md" fontWeight="500" key={"text_sec_"+index} _hover={{textDecoration: "underline"}}>{section}</Text>
               </HashLink>
             );
           })
         }
         <Link to="resume">
           <HStack>
-            <Text fontSize="md" fontWeight="700" _hover={{textDecoration: "underline"}}>resume</Text>
+            <Text fontSize="md" fontWeight="600" _hover={{textDecoration: "underline"}}>resume</Text>
             <FaDownload />
           </HStack>
         </Link>
+        <CLink href="https://blog.jchiroto.dev" isExternal>
+          <HStack>
+            <Text fontSize="md" fontWeight="600" _hover={{textDecoration: "underline"}}>blog</Text>
+            <FaExternalLinkAlt />
+          </HStack>
+        </CLink>
       </HStack>
       <HStack spacing={2}>
         <motion.div transition={spring} whileTap={{rotate: 180, opacity:0}} whileHover={{scale: 1.1}}>
