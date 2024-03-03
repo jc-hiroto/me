@@ -1,6 +1,6 @@
 import { HStack, Text, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-const SectionTitle = ({base, sup, animate}) => {
+const SectionTitle = ({ base, sup, animate }) => {
   const titleColor = useColorModeValue("gray.600", "gray.300");
   const emoji_variants = {
     initial: {
@@ -16,9 +16,9 @@ const SectionTitle = ({base, sup, animate}) => {
         mass: 1,
         damping: 10,
         delay: 0.2,
-      }
-    }
-  }
+      },
+    },
+  };
   const title_variants = {
     initial: {
       opacity: 0,
@@ -33,15 +33,35 @@ const SectionTitle = ({base, sup, animate}) => {
         mass: 1,
         damping: 10,
         delay: 0.2,
-      }
-    }
-  }
-  return(
+      },
+    },
+  };
+  return (
     <HStack spacing="4" align="end">
-        <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="600" color={titleColor} variants={emoji_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>
-          {sup}
-        </Text>
-        <Text as={animate? motion.div:""} fontSize={["4xl","5xl","5xl","6xl"]} fontWeight="700" color={titleColor} variants={title_variants} initial="initial" whileInView="inview" viewport={{ once: true }}>{base}</Text>
+      <Text
+        as={animate ? motion.div : ""}
+        fontSize={["4xl", "5xl", "5xl", "6xl"]}
+        fontWeight="600"
+        color={titleColor}
+        variants={emoji_variants}
+        initial="initial"
+        whileInView="inview"
+        viewport={{ once: true }}
+      >
+        {sup}
+      </Text>
+      <Text
+        as={animate ? motion.div : ""}
+        fontSize={["4xl", "5xl", "5xl", "6xl"]}
+        fontWeight="700"
+        color={titleColor}
+        variants={title_variants}
+        initial="initial"
+        whileInView="inview"
+        viewport={{ once: true }}
+      >
+        {base}
+      </Text>
     </HStack>
   );
 };

@@ -36,7 +36,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "vite serve"
+    "serve": "vite serve",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -55,5 +56,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "3.2.5"
   }
 }

@@ -1,16 +1,11 @@
-
-import {
-  Text,
-  Flex,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { HashLink } from 'react-router-hash-link';
+import { Text, Flex, useColorModeValue } from "@chakra-ui/react";
+import { HashLink } from "react-router-hash-link";
 import { motion } from "framer-motion";
 
-function SeekingBanner(){
+function SeekingBanner() {
   const bannerBg = useColorModeValue("blue.400", "blue.400");
   const variants = {
-    initial: { 
+    initial: {
       y: 0,
       rotateZ: 0,
       boxShadow: "0px 5px 10px rgba(0,0,0,0.1)",
@@ -19,9 +14,9 @@ function SeekingBanner(){
       y: -10,
       rotateZ: 1,
       boxShadow: "0px 10px 30px rgba(0,0,0,0.2)",
-    }
+    },
   };
-  return(
+  return (
     <HashLink to="/#contact" smooth>
       <Flex
         as={motion.div}
@@ -37,13 +32,13 @@ function SeekingBanner(){
         alignItems="center"
         bg={bannerBg}
         borderRadius="lg"
-        style={{rotate: "-5deg"}}
+        style={{ rotate: "-5deg" }}
         boxShadow="lg"
       >
         <Text mr="4" fontSize={["2xl", "4xl"]} fontWeight="500">
           👀
         </Text>
-        <Text fontSize={["md","2xl"]} fontWeight="700" color="gray.100">
+        <Text fontSize={["md", "2xl"]} fontWeight="700" color="gray.100">
           Seeking 2024 SDE Full Time Positions
         </Text>
       </Flex>

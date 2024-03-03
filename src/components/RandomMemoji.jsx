@@ -1,7 +1,5 @@
 import React from "react";
-import {
-  Image,
-} from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 import jc_1 from "../img/jc_memojis/jc_1.png";
@@ -22,16 +20,44 @@ import jc_15 from "../img/jc_memojis/jc_15.png";
 import jc_16 from "../img/jc_memojis/jc_16.png";
 import jc_17 from "../img/jc_memojis/jc_17.png";
 
-function RandomMemoji({size, offsetY}) {
+function RandomMemoji({ size, offsetY }) {
   const [image, setImage] = React.useState(jc_2);
-  const memojis = [ jc_1, jc_2, jc_3, jc_4, jc_5, jc_6, jc_7, jc_8, jc_9, jc_10, jc_11, jc_12, jc_13, jc_14, jc_15, jc_16, jc_17 ];
+  const memojis = [
+    jc_1,
+    jc_2,
+    jc_3,
+    jc_4,
+    jc_5,
+    jc_6,
+    jc_7,
+    jc_8,
+    jc_9,
+    jc_10,
+    jc_11,
+    jc_12,
+    jc_13,
+    jc_14,
+    jc_15,
+    jc_16,
+    jc_17,
+  ];
   const handleRandomMemoji = () => {
     const random = Math.floor(Math.random() * 17);
     setImage(memojis[random]);
   };
-  return(
-    <motion.div whileTap={{scale: 0.8, opacity:0.5}} initial={{y: offsetY}}>
-      <Image mx="2" src={image} alt='JC memoji' boxSize={size} cursor="pointer" onClick={() => handleRandomMemoji()}/>
+  return (
+    <motion.div
+      whileTap={{ scale: 0.8, opacity: 0.5 }}
+      initial={{ y: offsetY }}
+    >
+      <Image
+        mx="2"
+        src={image}
+        alt="JC memoji"
+        boxSize={size}
+        cursor="pointer"
+        onClick={() => handleRandomMemoji()}
+      />
     </motion.div>
   );
 }

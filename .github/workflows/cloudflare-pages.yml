@@ -1,0 +1,22 @@
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: ⚡️ Deploy to Cloudflare Pages
+    steps:
+      - name: ⤴️ Checkout
+        uses: actions/checkout@v3
+      # Run your project's build step
+      - name: 🛠 Build
+        run: yarn && yarn build
+      - name: 🚀 Deploy
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: "jchiroto"
+          directory: "dist"
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
