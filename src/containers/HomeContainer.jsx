@@ -18,7 +18,7 @@ import ContactContainer from "../containers/ContactContainer";
 import DevContainer from "../containers/DevContainer";
 import { HashLink } from "react-router-hash-link";
 
-const sections = ["about", "experience", "projects", "contact"];
+const sections = ["about", "edu/exp", "projects", "contact"];
 
 function HomeContainer() {
   const [isAtPageTop, setIsAtPageTop] = useState(true);

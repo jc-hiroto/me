@@ -42,7 +42,6 @@ const ContactContainer = ({ name }) => {
           flexDirection="column"
           bg={useColorModeValue("gray.50", "#111111")}
           borderRadius="xl"
-          boxShadow="xl"
           zIndex="100"
         >
           <Flex

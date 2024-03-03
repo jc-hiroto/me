@@ -3,8 +3,8 @@ import RandomMemoji from "../components/RandomMemoji";
 
 const WelcomeContainer = ({ name }) => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
-  const titleColor = useColorModeValue("gray.600", "gray.200");
-  const secondaryColor = useColorModeValue("gray.400", "gray.500");
+  const titleColor = useColorModeValue("gray.700", "gray.300");
+  const secondaryColor = useColorModeValue("gray.600", "gray.500");
   return (
     <Flex
       id={name}
@@ -17,10 +17,15 @@ const WelcomeContainer = ({ name }) => {
     >
       <Flex flexDirection="column" justifyContent="center" alignItems="center">
         <RandomMemoji
-          size={isMobile ? "128px" : "200px"}
-          offsetY={isMobile ? 30 : 60}
+          size={isMobile ? "100px" : "160px"}
+          offsetY={isMobile ? 10 : 30}
         />
-        <Text fontSize={["6xl", "8xl"]} fontWeight="700" color={titleColor}>
+        <Text
+          fontSize={["6xl", "8xl"]}
+          fontWeight="600"
+          fontFamily="mono"
+          color={titleColor}
+        >
           James
         </Text>
       </Flex>
@@ -30,7 +35,7 @@ const WelcomeContainer = ({ name }) => {
         color={secondaryColor}
         fontFamily="mono"
       >
-        developer + photographer
+        developer / photographer
       </Text>
     </Flex>
   );

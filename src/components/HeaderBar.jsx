@@ -77,9 +77,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             <Link to="resume">
               <MenuItem _focus={{ boxShadow: "none" }}>
                 <HStack>
-                  <Text fontSize="md" fontWeight="600">
-                    resume
-                  </Text>
+                  <Text fontSize="md">resume</Text>
                   <FaDownload />
                 </HStack>
               </MenuItem>
@@ -87,9 +85,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             <CLink href="https://blog.jchiroto.dev" isExternal>
               <MenuItem _focus={{ boxShadow: "none" }}>
                 <HStack>
-                  <Text fontSize="md" fontWeight="600">
-                    blog
-                  </Text>
+                  <Text fontSize="md">blog</Text>
                   <FaExternalLinkAlt />
                 </HStack>
               </MenuItem>
@@ -107,7 +103,6 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
           >
             James
           </Text>
-          {/* <Image src={jcMemojiWink} alt='JC wink memoji' boxSize='32px' /> */}
         </HashLink>
         <motion.div transition={spring} whileTap={{ rotate: 180, opacity: 0 }}>
           <Flex
@@ -117,9 +112,9 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             p="3"
           >
             {colorMode === "dark" ? (
-              <Icon as={BsMoonFill} color="purple.400" boxSize="4" />
+              <Icon as={BsMoonFill} color="gray.100" boxSize="4" />
             ) : (
-              <Icon as={BsSunFill} color="orange.500" boxSize="5" />
+              <Icon as={BsSunFill} color="gray.600" boxSize="5" />
             )}
           </Flex>
         </motion.div>
@@ -140,12 +135,9 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
       fontFamily="mono"
     >
       <HashLink to="/#top" smooth>
-        <Image
-          src={jcMemojiWink}
-          alt="JC wink memoji"
-          boxSize="32px"
-          cursor="pointer"
-        />
+        <Text fontWeight={700} fontFamily="mono" cursor="pointer">
+          James
+        </Text>
       </HashLink>
       <HStack spacing={10}>
         {sections.map((section, index) => {
@@ -166,7 +158,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
           <HStack>
             <Text
               fontSize="md"
-              fontWeight="600"
+              fontWeight="500"
               _hover={{ textDecoration: "underline" }}
             >
               resume
@@ -178,7 +170,7 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
           <HStack>
             <Text
               fontSize="md"
-              fontWeight="600"
+              fontWeight="500"
               _hover={{ textDecoration: "underline" }}
             >
               blog
@@ -199,9 +191,9 @@ function HeaderBar({ sections, isAtPageTop, pagePosition }) {
             _focus={{ boxShadow: "none" }}
           >
             {colorMode === "dark" ? (
-              <Icon as={BsMoonFill} color="purple.400" boxSize="5" />
+              <Icon as={BsMoonFill} color="gray.100" boxSize="5" />
             ) : (
-              <Icon as={BsSunFill} color="orange.500" boxSize="6" />
+              <Icon as={BsSunFill} color="gray.600" boxSize="6" />
             )}
           </IconButton>
         </motion.div>

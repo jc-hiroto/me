@@ -18,7 +18,7 @@ import { FaReply } from "react-icons/fa";
 function ProjectCard({ project, index }) {
   const [isSelected, setIsSelected] = React.useState(false);
   const [isMobile] = useMediaQuery("(max-width: 760px)");
-  const bgColor = useColorModeValue("gray.50", "#111111");
+  const bgColor = useColorModeValue("white", "#111111");
   const btnColor = useColorModeValue("gray.500", "gray.700");
   const titleColor = useColorModeValue("gray.700", "gray.300");
   const { title, img, desc, period, info, profession, btns } = project;
@@ -85,6 +85,7 @@ function ProjectCard({ project, index }) {
             <Text
               fontSize={["xl", "xl", "2xl"]}
               fontWeight="800"
+              fontFamily={"mono"}
               color={{ titleColor }}
             >
               {title}
@@ -92,9 +93,11 @@ function ProjectCard({ project, index }) {
             <Tag
               mt="3"
               mb="2"
+              fontFamily={"mono"}
               colorScheme={useColorModeValue("blackAlpha", "whiteAlpha")}
               size="sm"
               variant="outline"
+              rounded={"2"}
             >
               {period}
             </Tag>
@@ -129,10 +132,10 @@ function ProjectCard({ project, index }) {
           >
             <motion.div variants={notify_text_variants}>
               <Text
-                as="i"
-                mr="2"
+                fontFamily={"mono"}
+                mr="4"
                 fontSize={["sm", "sm"]}
-                fontWeight="700"
+                fontWeight="600"
                 color="gray.500"
               >
                 Click to know more
@@ -263,7 +266,7 @@ function ProjectCard({ project, index }) {
       alignItems="start"
       flexDirection="column"
       bg={bgColor}
-      borderRadius="xl"
+      rounded="lg"
       boxShadow="lg"
       cursor="pointer"
       variants={variants}

@@ -54,6 +54,7 @@ const SectionTitle = ({ base, sup, animate }) => {
         as={animate ? motion.div : ""}
         fontSize={["4xl", "5xl", "5xl", "6xl"]}
         fontWeight="700"
+        fontFamily={"mono"}
         color={titleColor}
         variants={title_variants}
         initial="initial"

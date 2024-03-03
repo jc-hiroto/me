@@ -55,7 +55,7 @@ const projects = [
       },
       { emoji: "🥈", content: "Won 2nd place in the class competition." },
     ],
-    profession: ["Java", "UI/UX"],
+    profession: ["Java", "SQLite", "Swing"],
     btns: [
       {
         title: "Repository",
@@ -137,7 +137,7 @@ const projects = [
           "Acquired by Office of Academic Affairs of National Taiwan University in Q3 2022.",
       },
     ],
-    profession: ["Node.js", "React", "Python", "MongoDB", "PGSQL"],
+    profession: ["Nodejs", "React", "Python", "PgSQL"],
     btns: [
       {
         title: "Repository",
@@ -173,7 +173,7 @@ const projects = [
           "Strictly layered architecture reduces complexity through low coupling.",
       },
     ],
-    profession: ["Node.js", "Typescript", "Redis", "TailwindCSS"],
+    profession: ["NodeJS", "Typescript", "Redis", "Tailwind"],
     btns: [],
   },
 ];

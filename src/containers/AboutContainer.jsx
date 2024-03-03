@@ -17,6 +17,7 @@ import CMULogo from "../img/cmu_logo.png";
 import TMLogo from "../img/tm_logo.png";
 import NCNLogo from "../img/ncn_logo.png";
 import AWSLogo from "../img/aws_logo.png";
+import TeslaLogo from "../img/tesla_logo.png";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaDownload, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -25,7 +26,7 @@ const AboutContainer = ({ name }) => {
   const bg_color = useColorModeValue("gray.50", "#111111");
   const ExpSection = (name, logo, position, time, desc) => {
     return (
-      <HStack spacing={4}>
+      <Flex flexDir={"row"} alignItems={"center"} gap={6} my={3}>
         <Avatar
           src={logo}
           alt={"logo of" + name}
@@ -35,55 +36,49 @@ const AboutContainer = ({ name }) => {
         <Flex flexDirection="column" justifyContent="start" alignItems="start">
           <Text
             fontSize={["xl", "xl", "2xl"]}
-            fontWeight="700"
+            fontWeight="500"
             color={useColorModeValue("gray.800", "gray.200")}
           >
             {name}
           </Text>
-          <Flex
-            w="100%"
-            flexWrap="wrap"
-            alignItems="center"
-            css={{ gap: "0.5em" }}
-          >
-            <Text
-              mr="2"
-              fontSize={["sm", "md"]}
-              fontWeight="500"
-              color={useColorModeValue("gray.600", "gray.400")}
-            >
-              {position}
-            </Text>
-            <Tag
-              color={useColorModeValue("gray.800", "gray.300")}
-              size="sm"
-              variant="outline"
-            >
-              {time}
-            </Tag>
-          </Flex>
           <Text
-            mt="2"
+            fontSize={["sm", "md"]}
+            fontWeight="500"
+            fontFamily={"mono"}
+            color={useColorModeValue("gray.600", "gray.400")}
+          >
+            {position}
+          </Text>
+          <Text
             fontSize={["sm", "md"]}
             fontWeight="400"
-            color={useColorModeValue("gray.800", "gray.200")}
+            color={useColorModeValue("gray.600", "gray.400")}
           >
             {desc}
           </Text>
+          <Tag
+            color={useColorModeValue("gray.700", "gray.300")}
+            size="sm"
+            fontFamily={"mono"}
+            variant="outline"
+            mt={2}
+            ml={0.5}
+            rounded={"2"}
+          >
+            {time}
+          </Tag>
         </Flex>
-      </HStack>
+      </Flex>
     );
   };
   return (
     <Flex
       id={name}
       w="100%"
-      pt="5vh"
       justifyContent="start"
       alignItems="center"
       flexDirection="column"
     >
-      <SectionTitle base="About" sup="🙌" animate />
       <Flex
         w="100%"
         minH="85vh"
@@ -242,7 +237,7 @@ const AboutContainer = ({ name }) => {
           </Flex>
         </Flex>
         <Flex
-          id="experience"
+          id="edu/exp"
           w="100%"
           pt="16"
           pb="32"
@@ -254,24 +249,24 @@ const AboutContainer = ({ name }) => {
           gap="8"
         >
           <Flex
-            w="100%"
             justifyContent="start"
             alignItems="start"
             flexDirection="column"
           >
             <Text
-              mb="4"
+              mb="2"
               fontSize="4xl"
               fontWeight="700"
+              fontFamily={"mono"}
               color={useColorModeValue("gray.800", "gray.200")}
             >
               Education
             </Text>
             <Flex
               w="100%"
-              justifyContent={{ base: "start", md: "space-between" }}
-              alignItems={{ base: "start", md: "center" }}
-              flexDirection={{ base: "column", md: "row" }}
+              justifyContent="start"
+              alignItems="start"
+              flexDirection="column"
             >
               {ExpSection(
                 "Carnegie Mellon University",
@@ -280,16 +275,10 @@ const AboutContainer = ({ name }) => {
                 "Aug. 2022 - Dec. 2023",
                 "GPA: 3.95 / 4.0 ・ Mountain View, CA"
               )}
-              <Icon
-                w={["32px", "48px", "64px"]}
-                as={BsThreeDotsVertical}
-                color={useColorModeValue("gray.600", "gray.600")}
-                display={{ base: "block", md: "none" }}
-              />
               {ExpSection(
                 "National Taiwan University",
                 NTULogo,
-                "B.S.E in Department of Engineering Science and Ocean Engineering",
+                "B.S.E in Department of Engineering Science & Ocean Engineering",
                 "Sep. 2018 - Jan. 2022",
                 "GPA: 4.07 / 4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan"
               )}
@@ -302,27 +291,34 @@ const AboutContainer = ({ name }) => {
             mr={{ base: "0", md: "16" }}
           >
             <Text
-              mb="4"
+              mb="2"
               fontSize="4xl"
               fontWeight="700"
+              fontFamily={"mono"}
               color={useColorModeValue("gray.800", "gray.200")}
             >
               Experience
             </Text>
-
-            <VStack justifyContent="start" alignItems="start">
+            <Flex
+              flexDir={"column"}
+              w="100%"
+              justifyContent="start"
+              alignItems="start"
+            >
               {ExpSection(
-                "Amazon Web Services (AWS)",
+                "Tesla, Inc.",
+                TeslaLogo,
+                "Autopilot Software Engineer",
+                "Feb. 2024 - Present",
+                "ML Infra and full-stack development for Autopilot and Tesla Bot."
+              )}
+              {ExpSection(
+                "Amazon Web Services",
                 AWSLogo,
-                "Software Engineer Intern (DB)",
+                "Software Engineer Intern",
                 "May 2023 - Aug. 2023",
                 "Worked on query monitoring at Redshift Distributed System and Cluster Availability team."
               )}
-              <Icon
-                w={["32px", "48px", "64px"]}
-                as={BsThreeDotsVertical}
-                color={useColorModeValue("gray.600", "gray.600")}
-              />
               {ExpSection(
                 "Carnegie Mellon University",
                 CMULogo,
@@ -330,43 +326,21 @@ const AboutContainer = ({ name }) => {
                 "Jan. 2023 - Dec. 2023",
                 "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa."
               )}
-              <Icon
-                w={["32px", "48px", "64px"]}
-                as={BsThreeDotsVertical}
-                color={useColorModeValue("gray.600", "gray.600")}
-              />
               {ExpSection(
-                "National Taiwan University",
+                "National Taiwan University - NTUCourse Neo Team",
                 NTULogo,
                 "Full Stack Developer",
-                "Jun. 2022 - Aug. 2022",
-                "Worked on next-gen course planning tool at the Office of Academic Affairs of NTU."
+                "Nov. 2021 - Aug. 2022",
+                "Worked on next-gen course planning service which assisted 10000+ students."
               )}
-              <Icon
-                w={["32px", "48px", "64px"]}
-                as={BsThreeDotsVertical}
-                color={useColorModeValue("gray.600", "gray.600")}
-              />
-              {ExpSection(
-                "NTUCourse Neo Team",
-                NCNLogo,
-                "Co-Founder, Full Stack Developer",
-                "Nov. 2021 - Jun. 2022",
-                "Developed a course planning service for National Taiwan University, which assisted 10000+ students."
-              )}
-              <Icon
-                w={["32px", "48px", "64px"]}
-                as={BsThreeDotsVertical}
-                color={useColorModeValue("gray.600", "gray.600")}
-              />
               {ExpSection(
                 "Trend Micro Inc.",
                 TMLogo,
                 "SDE Intern → Cloud Development Engineer",
                 "Jun. 2021 - Mar. 2022",
-                "Worked on backend services in Trend Micro Vision One™ Device Vulnerability Scanning Service (DVASS) team."
+                "Worked on backend services in Vision One™ Device Vulnerability Scanning Service team."
               )}
-            </VStack>
+            </Flex>
           </Flex>
         </Flex>
       </Flex>
