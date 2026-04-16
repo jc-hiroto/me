@@ -24,7 +24,7 @@ import { motion } from "framer-motion";
 
 const AboutContainer = ({ name }) => {
   const bg_color = useColorModeValue("gray.50", "#111111");
-  const ExpSection = (name, logo, position, time, desc) => {
+  const ExpSection = (name, logo, positions, desc) => {
     return (
       <Flex flexDir={"row"} alignItems={"center"} gap={6} my={3}>
         <Avatar
@@ -37,36 +37,51 @@ const AboutContainer = ({ name }) => {
           <Text
             fontSize={["xl", "xl", "2xl"]}
             fontWeight="500"
-            color={useColorModeValue("gray.800", "gray.200")}
+            color={useColorModeValue("gray.900", "gray.100")}
           >
             {name}
           </Text>
           <Text
             fontSize={["sm", "md"]}
-            fontWeight="500"
-            fontFamily={"mono"}
-            color={useColorModeValue("gray.600", "gray.400")}
-          >
-            {position}
-          </Text>
-          <Text
-            fontSize={["sm", "md"]}
             fontWeight="400"
-            color={useColorModeValue("gray.600", "gray.400")}
+            color={useColorModeValue("gray.700", "gray.300")}
           >
             {desc}
           </Text>
-          <Tag
-            color={useColorModeValue("gray.700", "gray.300")}
-            size="sm"
-            fontFamily={"mono"}
-            variant="outline"
-            mt={2}
-            ml={0.5}
-            rounded={"2"}
+          <Flex
+            marginTop={2}
+            flexDirection={"column"}
+            flexWrap="wrap"
+            gap={[4, 2]}
           >
-            {time}
-          </Tag>
+            {positions.map(([pos, time], idx) => (
+              <Flex
+                flexDirection={["column", "row"]}
+                key={idx}
+                alignItems={["start", "center"]}
+                gap={[1, 2]}
+              >
+                <Tag
+                  color={useColorModeValue("gray.700", "gray.400")}
+                  backgroundColor={useColorModeValue("gray.100", "gray.800")}
+                  size="sm"
+                  fontFamily={"mono"}
+                  variant="solid"
+                  rounded={"3"}
+                >
+                  {time}
+                </Tag>
+                <Text
+                  marginLeft={[1.5, 0]}
+                  fontSize={["sm", "sm"]}
+                  fontWeight="500"
+                  color={useColorModeValue("gray.600", "gray.400")}
+                >
+                  {pos}
+                </Text>
+              </Flex>
+            ))}
+          </Flex>
         </Flex>
       </Flex>
     );
@@ -167,12 +182,12 @@ const AboutContainer = ({ name }) => {
               I am experienced in
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}>
                 {" "}
-                Cloud Computing
+                AI Infra
               </chakra.span>
               ,
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}>
                 {" "}
-                Full Stack Development
+                Full Stack
               </chakra.span>
               , and
               <chakra.span color={useColorModeValue("gray.700", "gray.300")}>
@@ -271,15 +286,13 @@ const AboutContainer = ({ name }) => {
               {ExpSection(
                 "Carnegie Mellon University",
                 CMULogo,
-                "M.S. in Software Engineering",
-                "Aug. 2022 - Dec. 2023",
+                [["M.S. in Software Engineering", "Aug 2022 - Dec 2023"]],
                 "GPA: 3.95 / 4.0 ・ Mountain View, CA"
               )}
               {ExpSection(
                 "National Taiwan University",
                 NTULogo,
-                "B.S.E in Department of Engineering Science & Ocean Engineering",
-                "Sep. 2018 - Jan. 2022",
+                [["B.S.E in Department of ESOE", "Sep 2018 - Jan 2022"]],
                 "GPA: 4.07 / 4.3 ・ 5 Presidential Awards ・ Taipei, Taiwan"
               )}
             </Flex>
@@ -308,37 +321,38 @@ const AboutContainer = ({ name }) => {
               {ExpSection(
                 "Tesla, Inc.",
                 TeslaLogo,
-                "Autopilot Software Engineer",
-                "Feb. 2024 - Present",
-                "ML Infra and full-stack development for Autopilot and Tesla Bot."
+                [
+                  ["Sr. Autopilot Software Engineer", "Feb 2026 - Present"],
+                  ["Autopilot Software Engineer", "Feb 2024 - Jan 2026"],
+                ],
+                "ML Infra & Platform @ Tesla AI. Powering FSD, Robotaxi and Optimus workflows."
               )}
               {ExpSection(
                 "Amazon Web Services",
                 AWSLogo,
-                "Software Engineer Intern",
-                "May 2023 - Aug. 2023",
-                "Worked on query monitoring at Redshift Distributed System and Cluster Availability team."
+                [["Software Engineer Intern", "May 2023 - Aug 2023"]],
+                "Query monitoring @ Redshift Distributed System and Cluster Availability team."
               )}
               {ExpSection(
                 "Carnegie Mellon University",
                 CMULogo,
-                "Graduate Research Assistant",
-                "Jan. 2023 - Dec. 2023",
+                [["Graduate Research Assistant", "Jan 2023 - Dec 2023"]],
                 "Distributed System: Maintaining Microservice Systems. Advisor: Leonardo da Silva Sousa."
               )}
               {ExpSection(
-                "National Taiwan University - NTUCourse Neo Team",
+                "National Taiwan University - NTUCourse Neo",
                 NTULogo,
-                "Full Stack Developer",
-                "Nov. 2021 - Aug. 2022",
-                "Worked on next-gen course planning service which assisted 10000+ students."
+                [["Full Stack Developer", "Nov 2021 - Aug 2022"]],
+                "Founded next-gen course planning service which assisted 10000+ students."
               )}
               {ExpSection(
                 "Trend Micro Inc.",
                 TMLogo,
-                "SDE Intern → Cloud Development Engineer",
-                "Jun. 2021 - Mar. 2022",
-                "Worked on backend services in Vision One™ Device Vulnerability Scanning Service team."
+                [
+                  ["Cloud Development Engineer", "Sep 2021 - Mar 2022"],
+                  ["Software Engineer Intern", "Jul 2021 - Aug 2021"],
+                ],
+                "Backend services @ Vision One™ Device Vulnerability Scanning Service team."
               )}
             </Flex>
           </Flex>
