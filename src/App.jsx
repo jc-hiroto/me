@@ -1,6 +1,5 @@
 import HomeContainer from "./containers/HomeContainer";
 import { Navigate, Route, Routes } from "react-router-dom";
-import IPOContainer from "./containers/IPOContainer";
 import NotFoundContainer from "./containers/NotFoundContainer";
 import ResumeDownloadContainer from "./containers/resumeDownloadContainer";
 import RedirectContainer from "./containers/redirectContainer";
@@ -9,7 +8,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<HomeContainer />} />
-      <Route path="/ipo" element={<IPOContainer />} />
       <Route
         path="/resume"
         element={
